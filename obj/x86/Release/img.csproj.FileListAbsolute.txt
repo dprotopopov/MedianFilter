@@ -1,0 +1,26 @@
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\bin\Release\img.exe
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\bin\Release\img.pdb
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.Exp.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.MainForm.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\YLScsImage.ImagePanel.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.Priview.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.Properties.Resources.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.Settings.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.csproj.GenerateResource.Cache
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.exe
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.pdb
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.About.resources
+C:\Users\Заур\Documents\Visual Studio 2010\Projects\img\img\obj\x86\Release\img.csprojResolveAssemblyReference.cache
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.exe
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.pdb
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\bin\Release\img.exe
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\bin\Release\img.pdb
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.csprojResolveAssemblyReference.cache
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.About.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.Exp.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.MainForm.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\YLScsImage.ImagePanel.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.Priview.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.Properties.Resources.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.Settings.resources
+E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.csproj.GenerateResource.Cache

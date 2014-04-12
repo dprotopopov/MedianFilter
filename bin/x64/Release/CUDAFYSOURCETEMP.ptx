@@ -1,0 +1,405 @@
+	.version 1.4
+	.target sm_13
+	// compiled with C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin/../open64/lib//be.exe
+	// nvopencc 4.1 built on 2013-07-10
+
+	//-----------------------------------------------------------
+	// Compiling X:/Temp/tmpxft_000018d4_00000000-15_CUDAFYSOURCETEMP.cpp3.i (X:/Temp/ccBI#.a01068)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_13, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"X:/Temp/tmpxft_000018d4_00000000-14_CUDAFYSOURCETEMP.cudafe2.gpu"
+	.file	2	"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin/../../VC/INCLUDE\crtdefs.h"
+	.file	3	"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v5.5/include\crt/device_runtime.h"
+	.file	4	"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v5.5/include\host_defines.h"
+	.file	5	"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v5.5/include\builtin_types.h"
+	.file	6	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\device_types.h"
+	.file	7	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\host_defines.h"
+	.file	8	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\driver_types.h"
+	.file	9	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\surface_types.h"
+	.file	10	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\texture_types.h"
+	.file	11	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\vector_types.h"
+	.file	12	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\builtin_types.h"
+	.file	13	"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v5.5/include\device_launch_parameters.h"
+	.file	14	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\crt\storage_class.h"
+	.file	15	"D:/Projects/MedianFilter/bin/x64/Release/CUDAFYSOURCETEMP.cu"
+	.file	16	"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v5.5/include\common_functions.h"
+	.file	17	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\math_functions.h"
+	.file	18	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\math_constants.h"
+	.file	19	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\device_functions.h"
+	.file	20	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_11_atomic_functions.h"
+	.file	21	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_12_atomic_functions.h"
+	.file	22	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_13_double_functions.h"
+	.file	23	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_20_atomic_functions.h"
+	.file	24	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_32_atomic_functions.h"
+	.file	25	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_35_atomic_functions.h"
+	.file	26	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_20_intrinsics.h"
+	.file	27	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_30_intrinsics.h"
+	.file	28	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_32_intrinsics.h"
+	.file	29	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\sm_35_intrinsics.h"
+	.file	30	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\surface_functions.h"
+	.file	31	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\texture_fetch_functions.h"
+	.file	32	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\texture_indirect_functions.h"
+	.file	33	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\surface_indirect_functions.h"
+	.file	34	"c:\program files\nvidia gpu computing toolkit\cuda\v5.5\include\math_functions_dbl_ptx3.h"
+
+
+	.entry SelectNhBytes (
+		.param .u64 __cudaparm_SelectNhBytes_color,
+		.param .s32 __cudaparm_SelectNhBytes_colorLen0,
+		.param .u64 __cudaparm_SelectNhBytes_bytes,
+		.param .s32 __cudaparm_SelectNhBytes_bytesLen0,
+		.param .s32 __cudaparm_SelectNhBytes_index,
+		.param .s32 __cudaparm_SelectNhBytes_itemSize,
+		.param .s32 __cudaparm_SelectNhBytes_itemsCount,
+		.param .s32 __cudaparm_SelectNhBytes_width,
+		.param .s32 __cudaparm_SelectNhBytes_height,
+		.param .s32 __cudaparm_SelectNhBytes_n,
+		.param .s32 __cudaparm_SelectNhBytes_nh)
+	{
+	.reg .u16 %rh<6>;
+	.reg .u32 %r<23>;
+	.reg .u64 %rd<9>;
+	.reg .pred %p<4>;
+	.loc	15	13	0
+$LDWbegin_SelectNhBytes:
+	.loc	15	15	0
+	mov.u16 	%rh1, %ntid.x;
+	mov.u16 	%rh2, %ctaid.x;
+	mul.wide.u16 	%r1, %rh2, %rh1;
+	cvt.u32.u16 	%r2, %tid.x;
+	add.u32 	%r3, %r2, %r1;
+	mov.s32 	%r4, %r3;
+	ld.param.s32 	%r5, [__cudaparm_SelectNhBytes_itemsCount];
+	setp.le.s32 	%p1, %r5, %r3;
+	@%p1 bra 	$Lt_0_1282;
+	ld.param.s32 	%r6, [__cudaparm_SelectNhBytes_itemSize];
+	ld.param.s32 	%r7, [__cudaparm_SelectNhBytes_nh];
+	mul.lo.s32 	%r8, %r7, 2;
+	mov.u16 	%rh3, %nctaid.x;
+	mul.wide.u16 	%r9, %rh3, %rh1;
+	mul.lo.s32 	%r10, %r6, %r9;
+	ld.param.s32 	%r11, [__cudaparm_SelectNhBytes_width];
+	sub.s32 	%r12, %r11, %r8;
+	cvt.s64.s32 	%rd1, %r10;
+	ld.param.s32 	%r13, [__cudaparm_SelectNhBytes_index];
+	mul.lo.s32 	%r14, %r6, %r3;
+	add.s32 	%r15, %r13, %r14;
+	cvt.u64.s32 	%rd2, %r15;
+	ld.param.u64 	%rd3, [__cudaparm_SelectNhBytes_bytes];
+	add.u64 	%rd4, %rd2, %rd3;
+	ld.param.u64 	%rd5, [__cudaparm_SelectNhBytes_color];
+$Lt_0_1794:
+ //<loop> Loop body line 15, nesting depth: 1, estimated iterations: unknown
+	.loc	15	19	0
+	ld.global.u8 	%rh4, [%rd4+0];
+	rem.s32 	%r16, %r4, %r12;
+	.loc	15	15	0
+	ld.param.s32 	%r7, [__cudaparm_SelectNhBytes_nh];
+	.loc	15	19	0
+	add.s32 	%r17, %r7, %r16;
+	div.s32 	%r18, %r4, %r12;
+	add.s32 	%r19, %r7, %r18;
+	.loc	15	15	0
+	ld.param.s32 	%r11, [__cudaparm_SelectNhBytes_width];
+	.loc	15	19	0
+	mul.lo.s32 	%r20, %r11, %r19;
+	add.s32 	%r21, %r17, %r20;
+	cvt.u64.s32 	%rd6, %r21;
+	.loc	15	15	0
+	ld.param.u64 	%rd5, [__cudaparm_SelectNhBytes_color];
+	.loc	15	19	0
+	add.u64 	%rd7, %rd6, %rd5;
+	st.global.u8 	[%rd7+0], %rh4;
+	add.u32 	%r4, %r4, %r9;
+	add.u64 	%rd4, %rd1, %rd4;
+	.loc	15	15	0
+	ld.param.s32 	%r5, [__cudaparm_SelectNhBytes_itemsCount];
+	.loc	15	19	0
+	setp.lt.s32 	%p2, %r4, %r5;
+	@%p2 bra 	$Lt_0_1794;
+$Lt_0_1282:
+	.loc	15	21	0
+	exit;
+$LDWend_SelectNhBytes:
+	} // SelectNhBytes
+
+	.entry SelectColorBytes (
+		.param .u64 __cudaparm_SelectColorBytes_bytes,
+		.param .s32 __cudaparm_SelectColorBytes_bytesLen0,
+		.param .u64 __cudaparm_SelectColorBytes_color,
+		.param .s32 __cudaparm_SelectColorBytes_colorLen0,
+		.param .s32 __cudaparm_SelectColorBytes_itemSize,
+		.param .s32 __cudaparm_SelectColorBytes_itemsCount,
+		.param .s32 __cudaparm_SelectColorBytes_width,
+		.param .s32 __cudaparm_SelectColorBytes_height,
+		.param .s32 __cudaparm_SelectColorBytes_n,
+		.param .s32 __cudaparm_SelectColorBytes_nh)
+	{
+	.reg .u16 %rh<6>;
+	.reg .u32 %r<25>;
+	.reg .u64 %rd<9>;
+	.reg .pred %p<4>;
+	.loc	15	23	0
+$LDWbegin_SelectColorBytes:
+	.loc	15	25	0
+	mov.u16 	%rh1, %ntid.x;
+	mov.u16 	%rh2, %ctaid.x;
+	mul.wide.u16 	%r1, %rh2, %rh1;
+	cvt.u32.u16 	%r2, %tid.x;
+	add.u32 	%r3, %r2, %r1;
+	mov.s32 	%r4, %r3;
+	ld.param.s32 	%r5, [__cudaparm_SelectColorBytes_n];
+	mul.lo.s32 	%r6, %r5, %r5;
+	ld.param.s32 	%r7, [__cudaparm_SelectColorBytes_itemsCount];
+	mul.lo.s32 	%r8, %r7, %r6;
+	setp.le.s32 	%p1, %r8, %r3;
+	@%p1 bra 	$Lt_1_1282;
+	ld.param.s32 	%r9, [__cudaparm_SelectColorBytes_nh];
+	mul.lo.s32 	%r10, %r9, 2;
+	mov.u16 	%rh3, %nctaid.x;
+	mul.wide.u16 	%r11, %rh3, %rh1;
+	ld.param.s32 	%r12, [__cudaparm_SelectColorBytes_width];
+	sub.s32 	%r13, %r12, %r10;
+	cvt.s64.s32 	%rd1, %r3;
+	ld.param.u64 	%rd2, [__cudaparm_SelectColorBytes_bytes];
+	add.u64 	%rd3, %rd1, %rd2;
+	cvt.s64.u32 	%rd4, %r11;
+	ld.param.u64 	%rd5, [__cudaparm_SelectColorBytes_color];
+$Lt_1_1794:
+ //<loop> Loop body line 25, nesting depth: 1, estimated iterations: unknown
+	.loc	15	33	0
+	div.s32 	%r14, %r4, %r6;
+	rem.s32 	%r15, %r4, %r6;
+	rem.s32 	%r16, %r14, %r13;
+	.loc	15	25	0
+	ld.param.s32 	%r5, [__cudaparm_SelectColorBytes_n];
+	.loc	15	33	0
+	rem.s32 	%r17, %r15, %r5;
+	add.s32 	%r18, %r16, %r17;
+	div.s32 	%r19, %r14, %r13;
+	div.s32 	%r20, %r15, %r5;
+	add.s32 	%r21, %r19, %r20;
+	.loc	15	25	0
+	ld.param.s32 	%r12, [__cudaparm_SelectColorBytes_width];
+	.loc	15	33	0
+	mul.lo.s32 	%r22, %r12, %r21;
+	add.s32 	%r23, %r18, %r22;
+	cvt.u64.s32 	%rd6, %r23;
+	.loc	15	25	0
+	ld.param.u64 	%rd5, [__cudaparm_SelectColorBytes_color];
+	.loc	15	33	0
+	add.u64 	%rd7, %rd6, %rd5;
+	ld.global.u8 	%rh4, [%rd7+0];
+	st.global.u8 	[%rd3+0], %rh4;
+	add.u32 	%r4, %r4, %r11;
+	add.u64 	%rd3, %rd4, %rd3;
+	setp.gt.s32 	%p2, %r8, %r4;
+	@%p2 bra 	$Lt_1_1794;
+$Lt_1_1282:
+	.loc	15	35	0
+	exit;
+$LDWend_SelectColorBytes:
+	} // SelectColorBytes
+
+	.entry Merge (
+		.param .u64 __cudaparm_Merge_a,
+		.param .s32 __cudaparm_Merge_aLen0,
+		.param .u64 __cudaparm_Merge_b,
+		.param .s32 __cudaparm_Merge_bLen0,
+		.param .s32 __cudaparm_Merge_i,
+		.param .s32 __cudaparm_Merge_parity,
+		.param .s32 __cudaparm_Merge_ceilingItemSize,
+		.param .s32 __cudaparm_Merge_itemSize,
+		.param .s32 __cudaparm_Merge_itemsCount)
+	{
+	.reg .u16 %rh<6>;
+	.reg .u32 %r<64>;
+	.reg .u64 %rd<27>;
+	.reg .pred %p<10>;
+	.loc	15	37	0
+$LDWbegin_Merge:
+	ld.param.s32 	%r1, [__cudaparm_Merge_i];
+	ld.param.s32 	%r2, [__cudaparm_Merge_ceilingItemSize];
+	sub.s32 	%r3, %r2, %r1;
+	sub.s32 	%r4, %r3, 1;
+	and.b32 	%r5, %r4, 31;
+	shl.b32 	%r6, 1, %r5;
+	ld.param.s32 	%r7, [__cudaparm_Merge_parity];
+	add.s32 	%r8, %r6, %r7;
+	ld.param.s32 	%r9, [__cudaparm_Merge_itemsCount];
+	mul.lo.s32 	%r10, %r9, %r8;
+	mov.u32 	%r11, 0;
+	setp.le.s32 	%p1, %r10, %r11;
+	@%p1 bra 	$Lt_2_5634;
+	mov.s32 	%r12, %r10;
+	ld.param.s32 	%r1, [__cudaparm_Merge_i];
+	and.b32 	%r13, %r1, 31;
+	add.s32 	%r14, %r1, 1;
+	shl.b32 	%r15, 1, %r13;
+	ld.param.s32 	%r7, [__cudaparm_Merge_parity];
+	shl.b32 	%r16, %r7, %r13;
+	shl.b32 	%r17, 2, %r13;
+	and.b32 	%r18, %r14, 31;
+	ld.param.s32 	%r19, [__cudaparm_Merge_itemSize];
+	mov.s32 	%r20, 0;
+	mov.s32 	%r21, %r12;
+$Lt_2_6146:
+ //<loop> Loop body line 37, nesting depth: 1, estimated iterations: unknown
+	.loc	15	45	0
+	div.s32 	%r22, %r20, %r8;
+	rem.s32 	%r23, %r20, %r8;
+	.loc	15	37	0
+	ld.param.s32 	%r19, [__cudaparm_Merge_itemSize];
+	.loc	15	45	0
+	mul.lo.s32 	%r24, %r22, %r19;
+	add.s32 	%r25, %r22, 1;
+	shl.b32 	%r26, %r23, %r18;
+	mul.lo.s32 	%r27, %r25, %r19;
+	add.s32 	%r28, %r24, %r26;
+	sub.s32 	%r29, %r28, %r16;
+	add.s32 	%r30, %r15, %r29;
+	max.s32 	%r31, %r24, %r30;
+	min.s32 	%r32, %r27, %r31;
+	.loc	15	46	0
+	add.s32 	%r33, %r17, %r29;
+	max.s32 	%r34, %r24, %r33;
+	min.s32 	%r35, %r27, %r34;
+	.loc	15	47	0
+	max.s32 	%r36, %r24, %r29;
+	min.s32 	%r37, %r27, %r36;
+	sub.s32 	%r38, %r32, %r37;
+	.loc	15	48	0
+	sub.s32 	%r39, %r35, %r32;
+	.loc	15	49	0
+	sub.s32 	%r40, %r35, %r37;
+	mov.s32 	%r41, 0;
+	setp.gt.s32 	%p2, %r38, %r41;
+	@!%p2 bra 	$Lt_2_6402;
+$Lt_2_6914:
+	.loc	15	54	0
+	mov.u32 	%r42, 0;
+	setp.le.s32 	%p3, %r39, %r42;
+	@%p3 bra 	$Lt_2_258;
+	ld.param.u64 	%rd1, [__cudaparm_Merge_b];
+	ld.param.u64 	%rd2, [__cudaparm_Merge_a];
+	add.s32 	%r43, %r37, %r38;
+	cvt.u64.s32 	%rd3, %r43;
+	add.u64 	%rd4, %rd3, %rd2;
+	ld.global.u8 	%r44, [%rd4+-1];
+	add.s32 	%r45, %r32, %r39;
+	cvt.u64.s32 	%rd5, %r45;
+	add.u64 	%rd6, %rd5, %rd2;
+	ld.global.u8 	%r46, [%rd6+-1];
+	setp.le.u32 	%p4, %r44, %r46;
+	@%p4 bra 	$Lt_2_7426;
+	.loc	15	58	0
+	sub.s32 	%r38, %r38, 1;
+	sub.s32 	%r47, %r40, 1;
+	mov.s32 	%r40, %r47;
+	add.s32 	%r48, %r37, %r38;
+	cvt.u64.s32 	%rd7, %r48;
+	.loc	15	54	0
+	ld.param.u64 	%rd2, [__cudaparm_Merge_a];
+	.loc	15	58	0
+	add.u64 	%rd8, %rd7, %rd2;
+	ld.global.u8 	%rh1, [%rd8+0];
+	add.s32 	%r49, %r37, %r47;
+	cvt.u64.s32 	%rd9, %r49;
+	.loc	15	54	0
+	ld.param.u64 	%rd1, [__cudaparm_Merge_b];
+	.loc	15	58	0
+	add.u64 	%rd10, %rd9, %rd1;
+	st.global.u8 	[%rd10+0], %rh1;
+	mov.s32 	%r50, 0;
+	setp.gt.s32 	%p2, %r38, %r50;
+	bra.uni 	$Lt_2_7170;
+$Lt_2_7426:
+	.loc	15	62	0
+	sub.s32 	%r39, %r39, 1;
+	sub.s32 	%r51, %r40, 1;
+	mov.s32 	%r40, %r51;
+	add.s32 	%r52, %r32, %r39;
+	cvt.u64.s32 	%rd11, %r52;
+	.loc	15	54	0
+	ld.param.u64 	%rd2, [__cudaparm_Merge_a];
+	.loc	15	62	0
+	add.u64 	%rd12, %rd11, %rd2;
+	ld.global.u8 	%rh2, [%rd12+0];
+	add.s32 	%r53, %r37, %r51;
+	cvt.u64.s32 	%rd13, %r53;
+	.loc	15	54	0
+	ld.param.u64 	%rd1, [__cudaparm_Merge_b];
+	.loc	15	62	0
+	add.u64 	%rd14, %rd13, %rd1;
+	st.global.u8 	[%rd14+0], %rh2;
+$Lt_2_7170:
+	@%p2 bra 	$Lt_2_6914;
+$Lt_2_6402:
+$Lt_2_258:
+	.loc	15	64	0
+	@!%p2 bra 	$Lt_2_7938;
+	mov.s32 	%r54, %r38;
+	add.s32 	%r55, %r37, %r38;
+	add.s32 	%r56, %r37, %r40;
+	cvt.u64.s32 	%rd15, %r56;
+	ld.param.u64 	%rd16, [__cudaparm_Merge_b];
+	add.u64 	%rd17, %rd15, %rd16;
+	cvt.u64.s32 	%rd18, %r55;
+	ld.param.u64 	%rd19, [__cudaparm_Merge_a];
+	add.u64 	%rd20, %rd18, %rd19;
+	mov.s32 	%r57, %r54;
+$Lt_2_8450:
+ //<loop> Loop body line 64, nesting depth: 2, estimated iterations: unknown
+	.loc	15	67	0
+	sub.s32 	%r55, %r55, 1;
+	sub.u64 	%rd20, %rd20, 1;
+	sub.s32 	%r40, %r40, 1;
+	sub.u64 	%rd17, %rd17, 1;
+	ld.global.u8 	%rh3, [%rd20+0];
+	st.global.u8 	[%rd17+0], %rh3;
+	setp.ne.s32 	%p5, %r37, %r55;
+	@%p5 bra 	$Lt_2_8450;
+$Lt_2_7938:
+	mov.u32 	%r58, 0;
+	setp.le.s32 	%p6, %r39, %r58;
+	@%p6 bra 	$Lt_2_8962;
+	mov.s32 	%r59, %r39;
+	add.s32 	%r60, %r32, %r39;
+	cvt.u64.s32 	%rd21, %r60;
+	ld.param.u64 	%rd22, [__cudaparm_Merge_a];
+	add.u64 	%rd23, %rd21, %rd22;
+	add.s32 	%r61, %r37, %r40;
+	cvt.u64.s32 	%rd24, %r61;
+	ld.param.u64 	%rd25, [__cudaparm_Merge_b];
+	add.u64 	%rd17, %rd24, %rd25;
+	mov.s32 	%r62, %r59;
+$Lt_2_9474:
+ //<loop> Loop body line 67, nesting depth: 2, estimated iterations: unknown
+	.loc	15	71	0
+	sub.s32 	%r60, %r60, 1;
+	sub.u64 	%rd23, %rd23, 1;
+	sub.u64 	%rd17, %rd17, 1;
+	ld.global.u8 	%rh4, [%rd23+0];
+	st.global.u8 	[%rd17+0], %rh4;
+	setp.ne.s32 	%p7, %r60, %r32;
+	@%p7 bra 	$Lt_2_9474;
+$Lt_2_8962:
+	add.s32 	%r20, %r20, 1;
+	setp.ne.s32 	%p8, %r10, %r20;
+	@%p8 bra 	$Lt_2_6146;
+$Lt_2_5634:
+	.loc	15	74	0
+	exit;
+$LDWend_Merge:
+	} // Merge
+	.const .align 1 .b8 _color[14400];
+
