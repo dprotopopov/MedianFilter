@@ -7,8 +7,8 @@ extern "C" __global__ void SelectColorBytes( unsigned char* bytes, int bytesLen0
 extern "C" __global__ void Merge( unsigned char* a, int aLen0,  unsigned char* b, int bLen0, int i, int parity, int ceilingItemSize, int itemSize, int itemsCount);
 
 // MyCudafy.CudafyFilter
-__constant__ unsigned char _color[14400];
-#define _colorLen0 14400
+__constant__ unsigned char _color[28900];
+#define _colorLen0 28900
 // MyCudafy.CudafyFilter
 extern "C" __global__ void SelectNhBytes( unsigned char* color, int colorLen0,  unsigned char* bytes, int bytesLen0, int index, int itemSize, int itemsCount, int width, int height, int n, int nh)
 {
