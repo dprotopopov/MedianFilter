@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace img
@@ -18,70 +13,54 @@ namespace img
         public Settings(int median, int noise, int sci)
             : this()
         {
-            this.Median = median;
-            this.SCI = sci;
-            this.Noise = noise;
+            Median = median;
+            SCI = sci;
+            Noise = noise;
         }
 
         public int Median
         {
-            get
-            {
-                return (int)numericUpDown2.Value;
-            }
-            set
-            {
-                numericUpDown2.Value = (decimal)value;
-            }
+            get { return (int) numericUpDownMedian.Value; }
+            set { numericUpDownMedian.Value = value; }
         }
 
         public int SCI
         {
-            get
-            {
-                return (int)numericUpDown3.Value;
-            }
-            set
-            {
-                numericUpDown3.Value = (decimal)value;
-            }
+            get { return (int) numericUpDownSCI.Value; }
+            set { numericUpDownSCI.Value = value; }
         }
 
         public int Noise
         {
-            get
-            {
-                return (int)numericUpDown1.Value;
-            }
-            set
-            {
-                numericUpDown1.Value = (decimal)value;
-            }
-        }
-        public int NumberOfProcess
-        {
-            get
-            {
-                return (int)numericUpDownNumberOfProcess.Value;
-            }
-            set
-            {
-                numericUpDownNumberOfProcess.Value = (decimal)value;
-            }
-        }
-        public int VideoMemorySize
-        {
-            get
-            {
-                return (int)numericUpDownVideoMemorySize.Value;
-            }
-            set
-            {
-                numericUpDownVideoMemorySize.Value = (decimal)value;
-            }
+            get { return (int) numericUpDownNoise.Value; }
+            set { numericUpDownNoise.Value = value; }
         }
 
-        public bool IsNativeEngine 
+        public int NumberOfProcess
+        {
+            get { return (int) numericUpDownNumberOfProcess.Value; }
+            set { numericUpDownNumberOfProcess.Value = value; }
+        }
+
+        public int VideoMemorySize
+        {
+            get { return Convert.ToInt32(numericUpDownVideoMemorySize.Value); }
+            set { numericUpDownVideoMemorySize.Value = value; }
+        }
+
+        public int GridSize
+        {
+            get { return Convert.ToInt32(numericUpDownGridSize.Value); }
+            set { numericUpDownGridSize.Value = value; }
+        }
+
+        public int BlockSize
+        {
+            get { return Convert.ToInt32(numericUpDownBlockSize.Value); }
+            set { numericUpDownBlockSize.Value = value; }
+        }
+
+        public bool IsNativeEngine
         {
             get { return radioButtonNativeEngine.Checked; }
         }

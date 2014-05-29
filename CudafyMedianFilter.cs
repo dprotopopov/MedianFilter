@@ -8,19 +8,24 @@ namespace img
         private readonly int _step;
         private readonly int _videoMemorySize;
 
-        public CudafyMedianFilter(Bitmap btm, int videoMemorySize, int step = 3)
+        public CudafyMedianFilter(Bitmap btm, int videoMemorySize, int gridSize = 0, int blockSize = 0, int step = 3)
             : base(btm, step)
         {
             _step = step;
             _videoMemorySize = videoMemorySize;
-            if (newbmp != null)
-                newbmp.Dispose();
-            if (oldbmp != null)
-                oldbmp.Dispose();
-            oldbmp = new Bitmap(btm);
+            if (Newbmp != null)
+                Newbmp.Dispose();
+            if (Oldbmp != null)
+                Oldbmp.Dispose();
+            Oldbmp = new Bitmap(btm);
             N = step%2 == 0 ? step += 1 : step;
             Nh = N/2;
+            GridSize = gridSize;
+            BlockSize = blockSize;
         }
+
+        public int GridSize { get; set; }
+        public int BlockSize { get; set; }
 
         public new bool Filter()
         {
@@ -28,9 +33,9 @@ namespace img
             {
                 lock (CudafyFilter.Semaphore)
                 {
-                    CudafyFilter.SetBitmap(oldbmp, _step, _videoMemorySize);
+                    CudafyFilter.SetBitmap(Oldbmp, _step, _videoMemorySize);
                     CudafyFilter.MedianFilter();
-                    newbmp = CudafyFilter.GetBitmap();
+                    Newbmp = CudafyFilter.GetBitmap();
                 }
             }
             catch

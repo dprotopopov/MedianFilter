@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCudafy.UnitTest", "..\MyL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "..\MyLibrary\MyLibrary\MyLibrary.csproj", "{E80CF993-5E07-4875-85FE-A2ADCF76558D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MpiFilter", "..\MyLibrary\MpiFilter\MpiFilter.vcxproj", "{3A16FBE3-A73B-4FF7-8E93-9581964557DC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpifilter", "mpifilter\MpiFilter.vcxproj", "{3A16FBE3-A73B-4FF7-8E93-9581964557DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,7 +122,6 @@ Global
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Debug|Win32.ActiveCfg = Debug|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Debug|Win32.Build.0 = Debug|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Debug|x64.ActiveCfg = Debug|Win32
-		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Debug|x64.Build.0 = Debug|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Debug|x86.ActiveCfg = Debug|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Debug|x86.Build.0 = Debug|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|Any CPU.ActiveCfg = Release|Win32
@@ -130,8 +129,8 @@ Global
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|Win32.ActiveCfg = Release|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|Win32.Build.0 = Release|Win32
-		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|x64.ActiveCfg = Release|Win32
-		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|x64.Build.0 = Release|Win32
+		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|x64.ActiveCfg = Release|x64
+		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|x64.Build.0 = Release|x64
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|x86.ActiveCfg = Release|Win32
 		{3A16FBE3-A73B-4FF7-8E93-9581964557DC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection

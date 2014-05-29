@@ -1,0 +1,18 @@
+﻿Сборка начата 29.05.2014 12:34:30.
+     1>Проект "D:\Projects\MedianFilter\mpifilter\MpiFilter.vcxproj" в узле 3 (целевые объекты Rebuild).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\MPICH2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt filter.cpp
+         filter.cpp
+     1>filter.cpp(130): warning C4244: инициализация: преобразование "MPI_Offset" в "long", возможна потеря данных
+     1>filter.cpp(189): warning C4244: инициализация: преобразование "MPI_Offset" в "long", возможна потеря данных
+     1>filter.cpp(41): warning C4101: req: неиспользованная локальная переменная
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\MedianFilter\Release\mpifilter.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\MPICH2\lib" mpi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\MedianFilter\Release\mpifilter.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\MedianFilter\Release\mpifilter.lib" /MACHINE:X86 /SAFESEH Release\filter.obj
+         Создание кода
+         Создание кода завершено
+         MpiFilter.vcxproj -> D:\Projects\MedianFilter\Release\mpifilter.exe
+     1>Сборка проекта "D:\Projects\MedianFilter\mpifilter\MpiFilter.vcxproj" завершена (целевые объекты Rebuild).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:01.12

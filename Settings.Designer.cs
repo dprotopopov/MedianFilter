@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownNoise = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMedian = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownSCI = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDownBlockSize = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownGridSize = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownVideoMemorySize = new System.Windows.Forms.NumericUpDown();
@@ -43,10 +47,12 @@
             this.radioButtonMpiEngine = new System.Windows.Forms.RadioButton();
             this.radioButtonCudafyEngine = new System.Windows.Forms.RadioButton();
             this.radioButtonNativeEngine = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMedian)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSCI)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBlockSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGridSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVideoMemorySize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfProcess)).BeginInit();
             this.SuspendLayout();
@@ -62,39 +68,39 @@
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numericUpDownNoise
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(283, 46);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownNoise.Location = new System.Drawing.Point(283, 46);
+            this.numericUpDownNoise.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownNoise.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(160, 22);
-            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDownNoise.Name = "numericUpDownNoise";
+            this.numericUpDownNoise.Size = new System.Drawing.Size(160, 22);
+            this.numericUpDownNoise.TabIndex = 2;
             // 
-            // numericUpDown2
+            // numericUpDownMedian
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(283, 78);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.numericUpDownMedian.Location = new System.Drawing.Point(283, 78);
+            this.numericUpDownMedian.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownMedian.Maximum = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(160, 22);
-            this.numericUpDown2.TabIndex = 2;
+            this.numericUpDownMedian.Name = "numericUpDownMedian";
+            this.numericUpDownMedian.Size = new System.Drawing.Size(160, 22);
+            this.numericUpDownMedian.TabIndex = 2;
             // 
-            // numericUpDown3
+            // numericUpDownSCI
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(283, 110);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(160, 22);
-            this.numericUpDown3.TabIndex = 2;
+            this.numericUpDownSCI.Location = new System.Drawing.Point(283, 110);
+            this.numericUpDownSCI.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownSCI.Name = "numericUpDownSCI";
+            this.numericUpDownSCI.Size = new System.Drawing.Size(160, 22);
+            this.numericUpDownSCI.TabIndex = 2;
             // 
             // label1
             // 
@@ -128,6 +134,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.numericUpDownBlockSize);
+            this.groupBox1.Controls.Add(this.numericUpDownGridSize);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.numericUpDownVideoMemorySize);
@@ -137,15 +147,77 @@
             this.groupBox1.Controls.Add(this.radioButtonNativeEngine);
             this.groupBox1.Location = new System.Drawing.Point(14, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 185);
+            this.groupBox1.Size = new System.Drawing.Size(483, 183);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Вычислительная система";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(383, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "x";
+            // 
+            // numericUpDownBlockSize
+            // 
+            this.numericUpDownBlockSize.Location = new System.Drawing.Point(403, 83);
+            this.numericUpDownBlockSize.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownBlockSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownBlockSize.Name = "numericUpDownBlockSize";
+            this.numericUpDownBlockSize.Size = new System.Drawing.Size(44, 22);
+            this.numericUpDownBlockSize.TabIndex = 9;
+            this.numericUpDownBlockSize.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownGridSize
+            // 
+            this.numericUpDownGridSize.Location = new System.Drawing.Point(329, 83);
+            this.numericUpDownGridSize.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownGridSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownGridSize.Name = "numericUpDownGridSize";
+            this.numericUpDownGridSize.Size = new System.Drawing.Size(49, 22);
+            this.numericUpDownGridSize.TabIndex = 8;
+            this.numericUpDownGridSize.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(290, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 17);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Grid";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(171, 123);
+            this.label5.Location = new System.Drawing.Point(149, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 6;
@@ -154,15 +226,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 86);
+            this.label4.Location = new System.Drawing.Point(149, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 17);
+            this.label4.Size = new System.Drawing.Size(78, 17);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Видео память Kb";
+            this.label4.Text = "Память Kb";
             // 
             // numericUpDownVideoMemorySize
             // 
-            this.numericUpDownVideoMemorySize.Location = new System.Drawing.Point(309, 86);
+            this.numericUpDownVideoMemorySize.Location = new System.Drawing.Point(230, 83);
             this.numericUpDownVideoMemorySize.Maximum = new decimal(new int[] {
             1024,
             0,
@@ -174,7 +246,7 @@
             0,
             0});
             this.numericUpDownVideoMemorySize.Name = "numericUpDownVideoMemorySize";
-            this.numericUpDownVideoMemorySize.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownVideoMemorySize.Size = new System.Drawing.Size(51, 22);
             this.numericUpDownVideoMemorySize.TabIndex = 4;
             this.numericUpDownVideoMemorySize.Value = new decimal(new int[] {
             256,
@@ -189,7 +261,7 @@
             0,
             0,
             0});
-            this.numericUpDownNumberOfProcess.Location = new System.Drawing.Point(309, 121);
+            this.numericUpDownNumberOfProcess.Location = new System.Drawing.Point(327, 121);
             this.numericUpDownNumberOfProcess.Minimum = new decimal(new int[] {
             1,
             0,
@@ -209,9 +281,9 @@
             this.radioButtonMpiEngine.AutoSize = true;
             this.radioButtonMpiEngine.Location = new System.Drawing.Point(27, 122);
             this.radioButtonMpiEngine.Name = "radioButtonMpiEngine";
-            this.radioButtonMpiEngine.Size = new System.Drawing.Size(113, 21);
+            this.radioButtonMpiEngine.Size = new System.Drawing.Size(79, 21);
             this.radioButtonMpiEngine.TabIndex = 2;
-            this.radioButtonMpiEngine.Text = "Microsoft MPI";
+            this.radioButtonMpiEngine.Text = "MPICH2";
             this.radioButtonMpiEngine.UseVisualStyleBackColor = true;
             // 
             // radioButtonCudafyEngine
@@ -247,9 +319,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownSCI);
+            this.Controls.Add(this.numericUpDownMedian);
+            this.Controls.Add(this.numericUpDownNoise);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -260,11 +332,13 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Настройки";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMedian)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSCI)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBlockSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGridSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVideoMemorySize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfProcess)).EndInit();
             this.ResumeLayout(false);
@@ -275,9 +349,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDownNoise;
+        private System.Windows.Forms.NumericUpDown numericUpDownMedian;
+        private System.Windows.Forms.NumericUpDown numericUpDownSCI;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -289,5 +363,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDownVideoMemorySize;
         private System.Windows.Forms.NumericUpDown numericUpDownNumberOfProcess;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDownBlockSize;
+        private System.Windows.Forms.NumericUpDown numericUpDownGridSize;
+        private System.Windows.Forms.Label label6;
     }
 }

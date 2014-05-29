@@ -149,10 +149,10 @@ namespace img
             progressBar1.Value += 10;
             label6.Text = "Фильтрация BMP";
             richTextBox1.Text += "Фильтрация BMP\n";
-            medianBMP.setBMP = bmp;
+            medianBMP.SetBmp = bmp;
             medianBMP.Filter();
             progressBar1.Value += 20;
-            bmp = new Bitmap(medianBMP.getNewBMP);
+            bmp = new Bitmap(medianBMP.GetNewBmp);
 
             MedianFilter medianSCI = new MedianFilter(new Bitmap(sci), Median);
             label6.Text = "Добавление шума на SCI";
@@ -162,10 +162,10 @@ namespace img
             progressBar1.Value += 10;
             label6.Text = "Фильтрация SCI";
             richTextBox1.Text += "Фильтрация SCI\n";
-            medianSCI.setBMP = sci;
+            medianSCI.SetBmp = sci;
             medianSCI.Filter();
             progressBar1.Value += 20;
-            sci = new Bitmap(medianSCI.getNewBMP);
+            sci = new Bitmap(medianSCI.GetNewBmp);
 
             pictureBox2.Image = bmp;
             pictureBox3.Image = sci;

@@ -17,12 +17,12 @@ namespace img
         {
             _numberOfProcess = numberOfProcess;
             _step = step;
-            if (newbmp != null)
-                newbmp.Dispose();
-            if (oldbmp != null)
-                oldbmp.Dispose();
-            oldbmp = new Bitmap(btm);
-            newbmp = new Bitmap(btm.Width, btm.Height);
+            if (Newbmp != null)
+                Newbmp.Dispose();
+            if (Oldbmp != null)
+                Oldbmp.Dispose();
+            Oldbmp = new Bitmap(btm);
+            Newbmp = new Bitmap(btm.Width, btm.Height);
             N = step%2 == 0 ? step += 1 : step;
             Nh = N/2;
             _width = btm.Width;
@@ -41,13 +41,13 @@ namespace img
                 string inputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 string outputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 var buffer = new byte[3*1024];
-                string command = string.Format("/C mpiexec.exe -n {0} MpiFilter {1} {2} {3} {4} {5} {6} >> mpi.log",
+                string command = string.Format("/C mpiexec.exe -n {0} mpifilter {1} {2} {3} {4} {5} {6} >> mpi.log",
                     _numberOfProcess, "median", _step, _width, _height, inputFileName, outputFileName);
 
                 for (int y = 0; y < _height; y++)
                     for (int x = 0; x < _width; x++)
                     {
-                        Color c = oldbmp.GetPixel(x, y);
+                        Color c = Oldbmp.GetPixel(x, y);
                         _channel[0][0][y*_width + x] = c.R;
                         _channel[0][1][y*_width + x] = c.G;
                         _channel[0][2][y*_width + x] = c.B;
@@ -89,7 +89,7 @@ namespace img
                         for (int y = 0; y < _height; y++)
                             for (int x = 0; x < _width; x++)
                             {
-                                newbmp.SetPixel(x, y,
+                                Newbmp.SetPixel(x, y,
                                     Color.FromArgb(_channel[1][0][y*_width + x], _channel[1][1][y*_width + x],
                                         _channel[1][2][y*_width + x]));
                             }
@@ -105,9 +105,9 @@ namespace img
             return true;
         }
 
-        public new Bitmap getNewBMP
+        public new Bitmap GetNewBmp
         {
-            get { return newbmp; }
+            get { return Newbmp; }
         }
     }
 }

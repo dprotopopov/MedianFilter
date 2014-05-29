@@ -5,8 +5,8 @@ D:\Projects\MedianFilter\bin\x64\Release\Cudafy.NET.dll
 D:\Projects\MedianFilter\bin\x64\Release\MyCudafy.dll
 D:\Projects\MedianFilter\bin\x64\Release\MyLibrary.dll
 D:\Projects\MedianFilter\bin\x64\Release\MyCudafy.pdb
-D:\Projects\MedianFilter\bin\x64\Release\Cudafy.NET.xml
 D:\Projects\MedianFilter\bin\x64\Release\MyLibrary.pdb
+D:\Projects\MedianFilter\bin\x64\Release\Cudafy.NET.xml
 D:\Projects\MedianFilter\obj\x64\Release\img.csprojResolveAssemblyReference.cache
 D:\Projects\MedianFilter\obj\x64\Release\img.About.resources
 D:\Projects\MedianFilter\obj\x64\Release\img.Exp.resources

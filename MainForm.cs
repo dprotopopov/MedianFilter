@@ -8,21 +8,21 @@ namespace img
 {
     public partial class MainForm : Form
     {
-        private readonly Convertor convertor;
-        private readonly Settings settings;
-        private readonly ToolTip t1 = new ToolTip();
-        private readonly ToolTip t2 = new ToolTip();
-        private readonly List<TabPage> tabs;
+        private readonly Convertor _convertor;
+        private readonly Settings _settings;
+        private readonly ToolTip _t1 = new ToolTip();
+        private readonly ToolTip _t2 = new ToolTip();
+        private readonly List<TabPage> _tabs;
 
         public MainForm()
         {
             InitializeComponent();
             try
             {
-                tabs = new List<TabPage>();
+                _tabs = new List<TabPage>();
                 tabControl1.Selected += tabControl1_Selected;
-                convertor = new Convertor();
-                settings = new Settings(3, 15, 0);
+                _convertor = new Convertor();
+                _settings = new Settings(3, 15, 0);
                 timer1.Interval = 1000;
                 timer1.Start();
             }
@@ -84,7 +84,7 @@ namespace img
             try
             {
                 var etalon = new TabPage();
-                etalon.Text = string.Format("Img{0}", tabs.Count + 1);
+                etalon.Text = string.Format("Img{0}", _tabs.Count + 1);
                 etalon.Tag = ext;
 
                 var split = new SplitContainer();
@@ -96,16 +96,16 @@ namespace img
                 pb1.MouseWheel += pb1_MouseWheel;
                 if (ext == ".bmp")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения BMP");
+                    _t1.SetToolTip(pb1, "Формат изображения BMP");
                     pb1.Tag = ".bmp";
                 }
                 else if (ext == ".sci")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения SCI");
+                    _t1.SetToolTip(pb1, "Формат изображения SCI");
                     pb1.Tag = ".sci";
                 }
                 pb1.Dock = DockStyle.Fill;
-                pb1.Name = string.Format("pb{0}", tabs.Count);
+                pb1.Name = string.Format("pb{0}", _tabs.Count);
                 if (img != null)
                     pb1.Image = new Bitmap(img);
                 split.Panel1.Controls.Add(pb1);
@@ -113,12 +113,12 @@ namespace img
                 var pb2 = new ImagePanel();
                 pb2.MouseWheel += pb1_MouseWheel;
                 pb2.Dock = DockStyle.Fill;
-                pb2.Name = string.Format("pb{0}", tabs.Count + 1);
+                pb2.Name = string.Format("pb{0}", _tabs.Count + 1);
                 split.Panel2.Controls.Add(pb2);
 
                 etalon.Controls.Add(split);
                 tabControl1.TabPages.Add(etalon);
-                tabs.Add(etalon);
+                _tabs.Add(etalon);
                 zoomin.Enabled = true;
                 zoomout.Enabled = true;
                 OpenLogic(etalon);
@@ -174,22 +174,24 @@ namespace img
         {
             try
             {
-                var open = new OpenFileDialog();
-                open.Filter = "bitmap|*.bmp|SCI|*.sci";
-                if (open.ShowDialog() == DialogResult.OK)
+                var openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "bitmap|*.bmp|SCI|*.sci";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     Bitmap bmp = default(Bitmap);
-                    if (open.FileName.IndexOf(".sci") != -1)
+                    if (openFileDialog.FileName.IndexOf(".sci", StringComparison.Ordinal) != -1)
                     {
-                        bmp = new Bitmap(convertor.OpenSCI(open.FileName));
+                        bmp = new Bitmap(_convertor.OpenSCI(openFileDialog.FileName));
                     }
-                    else if (open.FileName.IndexOf(".bmp") != -1)
+                    else if (openFileDialog.FileName.IndexOf(".bmp", StringComparison.Ordinal) != -1)
                     {
-                        bmp = new Bitmap(open.FileName);
+                        bmp = new Bitmap(openFileDialog.FileName);
                     }
 
-                    CreateTab(new Bitmap(bmp), open.FileName.Substring(open.FileName.LastIndexOf(".")));
-                    tabControl1.SelectedIndex = tabs.Count - 1;
+                    CreateTab(new Bitmap(bmp),
+                        openFileDialog.FileName.Substring(openFileDialog.FileName.LastIndexOf(".",
+                            StringComparison.Ordinal)));
+                    tabControl1.SelectedIndex = _tabs.Count - 1;
                     right.Enabled = false;
                     left.Enabled = false;
                     tool2.Text = string.Format("{0}х{1}", bmp.Width, bmp.Height);
@@ -215,8 +217,8 @@ namespace img
                     save.Filter = "SCI|*.sci";
                     if (save.ShowDialog() == DialogResult.OK)
                     {
-                        convertor.SetBMP = pb2.Image;
-                        convertor.SaveOnDisk(save.FileName);
+                        _convertor.SetBMP = pb2.Image;
+                        _convertor.SaveOnDisk(save.FileName);
                     }
                 }
                 else if (pb2.Tag.ToString() == ".bmp")
@@ -236,56 +238,67 @@ namespace img
             }
         }
 
+        /// <summary>
+        ///     Выполнение медианной фильтрации
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void median_Click(object sender, EventArgs e)
         {
             try
             {
-                DateTime dold = DateTime.Now;
+                DateTime dateTime = DateTime.Now;
                 Cursor = Cursors.AppStarting;
-                TabPage tp = tabControl1.SelectedTab;
-                var pb1 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel1.Controls[0];
-                IFilter median;
-                if (settings.IsCudafyEngine)
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter;
+                if (_settings.IsCudafyEngine)
                 {
-                    median = new CudafyMedianFilter(new Bitmap(pb1.Image), settings.VideoMemorySize<<10,settings.Median);
+                    filter = new CudafyMedianFilter(new Bitmap(imagePanel.Image),
+                        _settings.VideoMemorySize << 10,
+                        _settings.GridSize,
+                        _settings.BlockSize,
+                        _settings.Median);
                 }
-                else if (settings.IsMpiEngine)
+                else if (_settings.IsMpiEngine)
                 {
-                    median = new MpiMedianFilter(new Bitmap(pb1.Image), settings.NumberOfProcess,settings.Median);
+                    filter = new MpiMedianFilter(new Bitmap(imagePanel.Image),
+                        _settings.NumberOfProcess,
+                        _settings.Median);
                 }
                 else
                 {
-                    median = new MedianFilter(new Bitmap(pb1.Image), settings.Median);
+                    filter = new MedianFilter(new Bitmap(imagePanel.Image), _settings.Median);
                 }
-                median.Filter();
-                var pb2 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel2.Controls[0];
-                TimeSpan sp = DateTime.Now - dold;
-                MessageBox.Show(string.Format("Время фильтрации: {0}\n", sp));
+                filter.Filter();
+                var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
 
                 #region params
 
-                if (tp.Tag.ToString() == ".sci")
+                if (tabPage.Tag.ToString() == ".sci")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения SCI");
-                    t2.SetToolTip(pb2, "Формат изображения SCI");
-                    pb1.Tag = ".sci";
+                    _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
+                    imagePanel.Tag = ".sci";
                     pb2.Tag = ".sci";
                 }
 
-                if (tp.Tag.ToString() == ".bmp")
+                if (tabPage.Tag.ToString() == ".bmp")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения BMP");
-                    t2.SetToolTip(pb2, "Формат изображения BMP");
-                    pb1.Tag = ".bmp";
+                    _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
+                    imagePanel.Tag = ".bmp";
                     pb2.Tag = ".bmp";
                 }
 
-                pb2.Image = median.getNewBMP;
-                OpenLogic(tp);
+                pb2.Image = filter.GetNewBmp;
+                OpenLogic(tabPage);
 
                 left.Enabled = true;
                 right.Enabled = true;
-                pb1.Zoom = 1;
+                imagePanel.Zoom = 1;
                 pb2.Zoom = 1;
 
                 #endregion
@@ -313,16 +326,16 @@ namespace img
                 {
                     var pb1 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel1.Controls[0];
                     var pb2 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel2.Controls[0];
-                    convertor.SetBMP = pb1.Image;
-                    convertor.SetAlfa = settings.SCI;
-                    pb2.Image = new Bitmap(convertor.ConvertToSCI());
+                    _convertor.SetBMP = pb1.Image;
+                    _convertor.SetAlfa = _settings.SCI;
+                    pb2.Image = new Bitmap(_convertor.ConvertToSCI());
 
                     #region params
 
                     pb2.Tag = ".sci";
                     pb1.Tag = ".bmp";
-                    t1.SetToolTip(pb1, "Формат изображения BMP");
-                    t2.SetToolTip(pb2, "Формат изображения SCI");
+                    _t1.SetToolTip(pb1, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
                     left.Enabled = true;
                     right.Enabled = true;
                     save.Enabled = true;
@@ -348,17 +361,17 @@ namespace img
                 TabPage tp = tabControl1.SelectedTab;
                 var pb1 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel1.Controls[0];
                 var filter = new MedianFilter();
-                pb1.Image = new Bitmap(filter.AddNoise(pb1.Image, settings.Noise));
+                pb1.Image = new Bitmap(filter.AddNoise(pb1.Image, _settings.Noise));
 
                 #region params
 
                 if (tp.Tag.ToString() == ".bmp")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения BMP");
+                    _t1.SetToolTip(pb1, "Формат изображения BMP");
                 }
                 else if (tp.Tag.ToString() == ".sci")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения SCI");
+                    _t1.SetToolTip(pb1, "Формат изображения SCI");
                 }
 
                 #endregion
@@ -386,7 +399,7 @@ namespace img
                 tp.Tag = pb2.Tag;
                 if (pb2.Tag.ToString() == ".bmp")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения BMP");
+                    _t1.SetToolTip(pb1, "Формат изображения BMP");
                     pb1.Tag = ".bmp";
                     convert.Enabled = true;
                     convert2.Enabled = false;
@@ -395,7 +408,7 @@ namespace img
                 }
                 if (pb2.Tag.ToString() == ".sci")
                 {
-                    t1.SetToolTip(pb1, "Формат изображения SCI");
+                    _t1.SetToolTip(pb1, "Формат изображения SCI");
                     pb1.Tag = ".sci";
                     convert.Enabled = false;
                     convert2.Enabled = true;
@@ -442,12 +455,12 @@ namespace img
                 tp.Tag = "";
                 if (pb1.Tag.ToString() == ".bmp")
                 {
-                    t2.SetToolTip(pb2, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
                     pb2.Tag = ".bmp";
                 }
                 if (pb1.Tag.ToString() == ".sci")
                 {
-                    t2.SetToolTip(pb2, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
                     pb2.Tag = ".sci";
                 }
                 if (pb2.Image == null)
@@ -480,7 +493,7 @@ namespace img
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            if (settings.ShowDialog() == DialogResult.OK)
+            if (_settings.ShowDialog() == DialogResult.OK)
             {
                 // good
             }
@@ -584,16 +597,16 @@ namespace img
                 {
                     var pb1 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel1.Controls[0];
                     var pb2 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel2.Controls[0];
-                    convertor.SetBMP = pb1.Image;
-                    convertor.ConvertToSCI();
-                    pb2.Image = convertor.decode(convertor.getSCI); // Кодирование изображения в BMP
+                    _convertor.SetBMP = pb1.Image;
+                    _convertor.ConvertToSCI();
+                    pb2.Image = _convertor.decode(_convertor.getSCI); // Кодирование изображения в BMP
 
                     #region params
 
                     pb2.Tag = ".bmp";
                     pb1.Tag = ".sci";
-                    t1.SetToolTip(pb1, "Формат изображения SCI");
-                    t2.SetToolTip(pb2, "Формат изображения BMP");
+                    _t1.SetToolTip(pb1, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
                     left.Enabled = true;
                     right.Enabled = true;
                     save.Enabled = true;
