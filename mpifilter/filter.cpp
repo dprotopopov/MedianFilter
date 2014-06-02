@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 
 	MPI_Status status;
-	MPI_Request req;
 	MPI_File inFile;
 	MPI_File outFile;
 	MPI_Offset pos;

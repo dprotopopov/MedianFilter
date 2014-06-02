@@ -25,14 +25,3 @@ E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x
 E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Debug\img.csproj.GenerateResource.Cache
 D:\Projects\SignalProcessing\obj\x86\Debug\img.exe
 D:\Projects\SignalProcessing\obj\x86\Debug\img.pdb
-D:\Projects\MedianFilter\obj\x86\Debug\img.exe
-D:\Projects\MedianFilter\obj\x86\Debug\img.pdb
-D:\Projects\MedianFilter\obj\x86\Debug\img.csprojResolveAssemblyReference.cache
-D:\Projects\MedianFilter\obj\x86\Debug\img.About.resources
-D:\Projects\MedianFilter\obj\x86\Debug\img.Exp.resources
-D:\Projects\MedianFilter\obj\x86\Debug\img.MainForm.resources
-D:\Projects\MedianFilter\obj\x86\Debug\YLScsImage.ImagePanel.resources
-D:\Projects\MedianFilter\obj\x86\Debug\img.Priview.resources
-D:\Projects\MedianFilter\obj\x86\Debug\img.Properties.Resources.resources
-D:\Projects\MedianFilter\obj\x86\Debug\img.Settings.resources
-D:\Projects\MedianFilter\obj\x86\Debug\img.csproj.GenerateResource.Cache

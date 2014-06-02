@@ -24,3 +24,29 @@ E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x
 E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.Properties.Resources.resources
 E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.Settings.resources
 E:\Учеба\Дипломы\Диплом. Мадина\Программа\obj\x86\Release\img.csproj.GenerateResource.Cache
+D:\Projects\MedianFilter\bin\Release\img.exe.config
+D:\Projects\MedianFilter\obj\x86\Release\img.exe
+D:\Projects\MedianFilter\obj\x86\Release\img.pdb
+D:\Projects\MedianFilter\bin\Release\img.exe
+D:\Projects\MedianFilter\bin\Release\img.pdb
+D:\Projects\MedianFilter\bin\Release\Cudafy.NET.dll
+D:\Projects\MedianFilter\bin\Release\MiniMax.dll
+D:\Projects\MedianFilter\bin\Release\MyCudafy.dll
+D:\Projects\MedianFilter\bin\Release\MyFormula.dll
+D:\Projects\MedianFilter\bin\Release\MyLibrary.dll
+D:\Projects\MedianFilter\bin\Release\MyMath.dll
+D:\Projects\MedianFilter\bin\Release\MiniMax.pdb
+D:\Projects\MedianFilter\bin\Release\MyFormula.pdb
+D:\Projects\MedianFilter\bin\Release\MyCudafy.pdb
+D:\Projects\MedianFilter\bin\Release\MyLibrary.pdb
+D:\Projects\MedianFilter\bin\Release\MyMath.pdb
+D:\Projects\MedianFilter\bin\Release\Cudafy.NET.xml
+D:\Projects\MedianFilter\obj\x86\Release\img.csprojResolveAssemblyReference.cache
+D:\Projects\MedianFilter\obj\x86\Release\img.About.resources
+D:\Projects\MedianFilter\obj\x86\Release\img.Exp.resources
+D:\Projects\MedianFilter\obj\x86\Release\img.MainForm.resources
+D:\Projects\MedianFilter\obj\x86\Release\YLScsImage.ImagePanel.resources
+D:\Projects\MedianFilter\obj\x86\Release\img.Priview.resources
+D:\Projects\MedianFilter\obj\x86\Release\img.Properties.Resources.resources
+D:\Projects\MedianFilter\obj\x86\Release\img.Settings.resources
+D:\Projects\MedianFilter\obj\x86\Release\img.csproj.GenerateResource.Cache

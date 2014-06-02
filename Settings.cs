@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MiniMax.Forms;
 
 namespace img
 {
@@ -17,6 +18,8 @@ namespace img
             SCI = sci;
             Noise = noise;
         }
+
+        public BuildChooseDialog CudaBuildChooseDialog { get; set; }
 
         public int Median
         {
@@ -73,6 +76,14 @@ namespace img
         public bool IsMpiEngine
         {
             get { return radioButtonMpiEngine.Checked; }
+        }
+
+        private void buttonCudaChoose_Click(object sender, EventArgs e)
+        {
+            if (CudaBuildChooseDialog.ShowDialog() != DialogResult.OK) return;
+            MyLibrary.Collections.Properties values = CudaBuildChooseDialog.Values;
+            GridSize = 1;
+            BlockSize = Convert.ToInt32(values["N"]);
         }
     }
 }

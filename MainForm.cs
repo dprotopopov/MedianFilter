@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using MiniMax.Forms;
+using MyFormula;
 using YLScsImage;
 
 namespace img
@@ -21,8 +23,12 @@ namespace img
             {
                 _tabs = new List<TabPage>();
                 tabControl1.Selected += tabControl1_Selected;
+                var cudaBuildChooseDialog = new BuildChooseDialog(typeof (MyCudaFormula));
                 _convertor = new Convertor();
-                _settings = new Settings(3, 15, 0);
+                _settings = new Settings(3, 15, 0)
+                {
+                    CudaBuildChooseDialog = cudaBuildChooseDialog
+                };
                 timer1.Interval = 1000;
                 timer1.Start();
             }
