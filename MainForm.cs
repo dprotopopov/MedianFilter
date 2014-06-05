@@ -23,11 +23,13 @@ namespace img
             {
                 _tabs = new List<TabPage>();
                 tabControl1.Selected += tabControl1_Selected;
-                var cudaBuildChooseDialog = new BuildChooseDialog(typeof (MyCudaFormula));
+                var cudaBuildChooseDialog = new BuildChooseDialog(typeof(MyCudaFormula));
+                var mpiBuildChooseDialog = new BuildChooseDialog(typeof(MyMpiFormula));
                 _convertor = new Convertor();
                 _settings = new Settings(3, 15, 0)
                 {
-                    CudaBuildChooseDialog = cudaBuildChooseDialog
+                    CudaBuildChooseDialog = cudaBuildChooseDialog,
+                    MpiBuildChooseDialog = mpiBuildChooseDialog,
                 };
                 timer1.Interval = 1000;
                 timer1.Start();
