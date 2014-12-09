@@ -1,0 +1,310 @@
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Size :	400 267
+Input file name :	R:\Temp\1e8a83ce-e1f4-4e56-bcbd-c0c4df8423b4.bin
+Output file name :	R:\Temp\3f02f4af-5c61-4b46-bc8f-72e6d3094656.bin
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Size :	400 267
+Input file name :	R:\Temp\259c1dc7-2005-4bf0-9a7d-410ad66f9500.bin
+Output file name :	R:\Temp\1cedba19-ec7b-4b9b-8ab7-f1ae50c534fa.bin
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\816b679d-a2b6-4c45-b7df-6a3009e4d778.bin
+Output file name :	R:\Temp\fa3ab634-d000-4c38-bf8c-885229be34b4.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Size :	400 267
+Input file name :	R:\Temp\e0e83a78-be7b-4a08-a184-e672d8df794b.bin
+Output file name :	R:\Temp\f7b3bcae-396e-446a-a386-a2f7d59a8fe0.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\65540e51-9c6f-4dfe-ae14-343f79d4f0a1.bin
+Output file name :	R:\Temp\20d0eb27-cb12-4a92-a97b-a398e26e28ed.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\22170a8b-ce9f-43f8-9499-6a86f692e404.bin
+Output file name :	R:\Temp\0a2bdd37-1131-45b4-91bc-9f686b059e3a.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\c314a78d-5391-41fe-a3cd-470e89469f34.bin
+Output file name :	R:\Temp\324d56b0-0332-430f-a3f5-3c50fe8d9f0e.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\cb5b8d08-c499-405e-b5c4-e23888e5728b.bin
+Output file name :	R:\Temp\fc790060-0fc3-4d17-b42f-898eec559150.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Size :	400 267
+Input file name :	R:\Temp\7f2a3ae4-1ade-4aca-801d-ec92c4ce8ec8.bin
+Output file name :	R:\Temp\9c993c5e-120b-478e-ba7c-2585338691f1.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\f80e8090-086e-4167-956a-70b0d8f30a48.bin
+Output file name :	R:\Temp\8227406c-3097-4f7d-a6fd-2b96c69aa5fc.bin
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\ad863db3-7f3f-45f8-9421-892e0882716b.bin
+Output file name :	R:\Temp\c39ec673-deb8-4f86-9f19-bb4d151d5e52.bin
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Size :	400 267
+Input file name :	R:\Temp\a6e66214-bf15-4eb1-b5c0-cea25ad9b246.bin
+Output file name :	R:\Temp\f24a9d16-80ea-4c98-9d8a-51e2eb61020f.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\1001acae-2023-4b08-8784-80809a51f532.bin
+Output file name :	R:\Temp\7090eba5-1092-4415-b7a7-10c0c0cb98fb.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	100 100
+Input file name :	R:\Temp\1621ccbd-3f3b-4fae-bec1-a27651700e32.bin
+Output file name :	R:\Temp\ea563663-b483-40f7-9ed0-f419e7b1aeb5.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\b180f2cf-f80b-4697-95d9-095ceca70237.bin
+Output file name :	R:\Temp\baff21c1-7367-43a8-a91c-3a28cd4502f5.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	100 100
+Input file name :	R:\Temp\ad6a5adb-bdd6-4b78-87f2-619655daa8fe.bin
+Output file name :	R:\Temp\c6b6cc5f-5949-4e65-aeac-c2bc3ee3b192.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\7ddb6c10-526f-4445-adc7-0e2b1141bdd4.bin
+Output file name :	R:\Temp\04c753d9-f7fa-42fc-aa2b-afbc1230c120.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\e9dd024f-3616-40a3-90d9-e0c04e220f91.bin
+Output file name :	R:\Temp\a319bc58-9ac0-47fc-b780-9da64721fb4a.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\095b5ee3-2b20-462f-822c-107dd4fcb1c6.bin
+Output file name :	R:\Temp\0b6105e8-6aee-48df-8d74-027125c8cb33.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\7257cb0e-a69d-4a47-bccf-247d455677c4.bin
+Output file name :	R:\Temp\391e3d64-9b99-4622-9fc7-21cc65b8fa1b.bin
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Size :	400 267
+Input file name :	R:\Temp\7d4bad41-0151-4ac6-bc80-e35071fe3cc3.bin
+Output file name :	R:\Temp\76d44397-e229-4e59-b18a-c6c35693e9bb.bin
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\6b8df50e-eb87-47b6-ba56-7b584a37d9d5.bin
+Output file name :	R:\Temp\d8ae5267-26eb-4501-9ba5-3afbf0ad2565.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\9ae3361b-c391-461c-9ccb-d95bcdfaf8dd.bin
+Output file name :	R:\Temp\4167aa10-d655-4ab4-b28b-d1cb05a64e4c.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\0ba33edf-1eee-4493-a761-783723ff733a.bin
+Output file name :	R:\Temp\bd6a8692-1e15-447d-9359-44c6cec17d19.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\62e4b55f-ddb4-462f-8c3d-f5b81f9c15f3.bin
+Output file name :	R:\Temp\28121db3-80c6-4699-a0dd-00d57838a7b0.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\1d018962-204b-4d4b-b361-d566fa2a9999.bin
+Output file name :	R:\Temp\1166bf0c-a14f-4dae-99a9-15b9f0f03a7b.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\3ad20ae8-dfa9-41f4-96e2-1dde949957fc.bin
+Output file name :	R:\Temp\cecaa4e9-beb0-42d4-a8c8-d27ff9589fe0.bin
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\d10151d3-618b-4b0c-b516-49c697dfe58b.bin
+Output file name :	R:\Temp\bac6990a-503a-4ea6-a3cf-6472a915a703.bin
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Size :	400 267
+Input file name :	R:\Temp\d0ac5ac4-817d-4882-bfd1-0d82e5d23ec9.bin
+Output file name :	R:\Temp\417296cb-4a39-476d-ad54-b6bac5d872fa.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\018942a4-6fce-4fe1-96f6-c2f4516bda72.bin
+Output file name :	R:\Temp\50491b94-b8f8-488a-8aa9-b88368de1d0e.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\c14f664b-6b9e-486c-ab06-f2efe44b0952.bin
+Output file name :	R:\Temp\f002c6e0-6c54-4633-88ab-c0d85a797e43.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\067c2fc1-d302-4ec7-ab21-2f6057aa00af.bin
+Output file name :	R:\Temp\fc88427c-ef6e-4cca-91df-06014634f46a.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\a1efd32a-39da-4760-9ae3-9179515ef160.bin
+Output file name :	R:\Temp\c8ff8e6d-a597-480c-9b68-4eb878642215.bin
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Size :	400 267
+Input file name :	R:\Temp\595b0429-cbdd-40a8-867a-29154b9ce4d1.bin
+Output file name :	R:\Temp\99b1465c-8b65-4166-b8fc-6f26ae96c3d5.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	gauss
+Size :	400 267
+Input file name :	R:\Temp\03af7588-90d4-4fbe-9e1f-36a4a6817aa4.bin
+Output file name :	R:\Temp\960f8651-3ae0-4fd2-b30c-d8504545702b.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\8114118e-73f0-4517-94d0-2cfad00b8e42.bin
+Output file name :	R:\Temp\0839b8cb-7fdc-41db-8453-b7b3eebebeb3.bin
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Size :	400 267
+Input file name :	R:\Temp\2cf7b1a4-ca05-49f5-bac8-d8603ba263c8.bin
+Output file name :	R:\Temp\de25f657-930f-4fdd-8faa-9c910619ebb4.bin

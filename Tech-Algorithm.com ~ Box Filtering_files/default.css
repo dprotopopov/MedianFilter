@@ -1,0 +1,338 @@
+body {
+  background: white url(/templatesv2/default/images/bg.png) repeat-x top left ;
+  text-align: center ;
+  margin: 0 ;  
+  font-family: Tahoma ;
+}
+
+form {
+  float: left ;
+}
+
+table {
+  border: 1px solid #aaa ;
+}
+
+a {
+  text-decoration: none ;
+  color: #65A9D9 ;
+  font-family: Tahoma ;
+  font-size: 10pt ;  
+}
+
+a:hover {      
+  color: #D96565
+}
+
+.clearfloat {
+  clear: both ;
+}
+
+div#header {  
+  margin-top: 6px ;
+  margin-left: auto ;
+  margin-right: auto ;
+  width: 1000px ;
+  text-align: left ;
+  
+  border: 1px solid black ;
+  border-bottom: 0 ;
+  background: white url(/templatesv2/default/images/header-bg.png) repeat-x top left ;
+  height: 91px ;
+}
+
+div#header-image {
+  background: white url(/templatesv2/default/images/headtext.png) no-repeat top left ;
+  position: relative ;
+  top: 6px ;
+  left: 6px ;
+  width: 198px ;
+  height: 85px ;
+}
+
+div#header-text {       
+  font-family: Tahoma ;  
+  color: white ;
+  position: relative ;  
+  top: -100px ;
+  left: 15px ;
+}
+
+div#header-smalltext {
+  position: relative ;
+  font-size: 8pt ;
+  font-family: Tahoma ;
+  color: #888 ;  
+  top: -125px ;
+  left: 190px ;  
+}
+
+div#container {
+  margin-left: auto ;
+  margin-right: auto ;
+  margin-top: 7px ;
+  width: 1000px ;
+  border: 1px solid #bbb ;
+  border-top: 0 ;
+  text-align: left ;  
+  
+  padding-top: 5px ;
+  padding-bottom: 20px ;
+}
+
+div#footer {
+  font-family: Tahoma ;
+  font-size: 8pt ;
+  color: #666 ;
+  margin-bottom: 10px ;
+}
+
+div#content {
+  float: left ;
+  margin-left: 10px ;
+  width: 800px ;  
+}
+
+div#rightblock {
+  float: right ;
+  width: 180px ;  
+}
+
+.topnav {
+  width: 980px ;
+  font-family: Tahoma ;
+  font-size: 10pt ;
+  margin-left: auto ;
+  margin-right: auto ;
+  color: #999 ;  
+}
+
+/** general */
+.linebreak {
+  height: 1px ;
+  border: 1px solid #ddd ;
+  border-left: 1px solid #e5e5e5 ;
+  border-right: 1px solid #e5e5e5 ;  
+}
+
+.vspace {
+  margin-top: 20px ;
+}
+
+.smalltext {
+  font-size: 8pt ;
+}
+
+.arttable {
+  margin: 20px ;
+  font-size: 8pt ;
+  border: 0 ;
+}
+
+.arttable td {
+  padding: 2px 10px ;
+  background-color: #fefefe ;
+  border: 1px solid #d5d5d5 ;
+}
+
+/** news */
+.news {
+  margin-top: 10px ;
+  margin-bottom: 20px ;    
+}
+.newstitle {
+  font-size: 24px ;
+  font-family: Times New Roman ;
+  padding-left: 10px ;
+}
+.newsinfo {
+  font-size: 8pt ;
+  margin-top: 0 ;
+  padding-left: 34px ;
+  margin-bottom: 4px ;  
+  color: #888 ;
+}
+.newscontent {
+  font-size: 10pt ;
+  padding: 5px 15px 5px 35px ;
+  text-align: justify ;  
+}
+.AddSquare {
+    padding: 5px ;
+    padding-left: 15px ;
+    float: right ;
+}
+.AddLinks {
+    padding: 5px ;
+    padding-top: 10px ;
+}
+.newsfooter {
+  float: right ;
+  font-size: 8pt ;
+  color: #999 ;  
+  padding: 5px ;
+}
+.newsfooter a {
+  font-size: 8pt ;
+}
+
+/** article preview */
+.aprev {
+  margin-top: 10px ;
+}
+.aprevtitle {
+  margin-left: -10px ;
+  border-top: 1px solid #ddd ;  
+  padding: 3px 15px ;
+  background-color: #eee ;
+  font-size: 10pt ;  
+}
+.aprevtitle a {
+  font-family: Times New Roman ;
+  font-size: 14pt ;
+}
+.aprevinfo {
+  font-size: 7pt ;  
+  padding-left: 34px ;
+  margin-bottom: 2px ;  
+  color: #555 ;
+}
+.aprevcontent {
+  font-size: 10pt ;
+  padding: 5px 15px 5px 35px ;
+}
+.aprevfooter {
+  float: right ;
+  font-size: 8pt ;
+  padding: 5px ;
+}
+.aprevfooter a {
+  font-size: 8pt ;
+}
+
+/** floats */
+.floatstop {
+  background: white url(/templatesv2/default/images/floattopbg.png) repeat-x top left ;
+  border: 1px solid #ddd ;  
+  width: 90% ;  
+  padding: 5px 5px 10px ;
+  margin-bottom: 5px ;
+}
+.floatstitle {
+  font-family: Times New Roman ;
+  font-size: 16pt ;
+  margin-bottom: 6px ;  
+}
+
+.raquolink {
+  margin-left: 10px ;
+  font-size: 8pt ;
+}
+
+/** odd/even for posts lists */
+.peven, .podd {
+  margin-left: -9px ;
+  margin-bottom: 1px ;
+  padding-left: 45px ;
+}
+.peven a, .podd a {
+  font-family: Times New Roman ;
+  font-size: 14pt ;
+}
+.peven {  
+  background-color: #fff4f1 ;
+}
+.podd {
+}
+
+/** formatting for posts */
+html>body pre.javasnip {
+  width: 720px ;
+}
+* html pre.javasnip {
+  overflow: hidden ;
+}
+pre.javasnip {
+  font-family: courier new ;
+  padding: 0.5em ;  
+  border: 1px dashed #AAA ;  
+  background: #EFE ;
+  font-size: 0.9em ;
+  width: 720px ;
+}
+b.keywords {
+  color: blue ;
+}
+code.cmt {
+  color: gray ;  
+}
+.posttable {
+  
+  border: 1px solid #AAA ;
+  
+}
+.posttable td {
+  padding: 0.5em ;
+}
+
+/** forms */
+.stdform {
+  font-size: 8pt ;
+}
+.stdform input.field {    
+  width: 20em ;
+  border: 1px solid #aaa ;
+}
+.stdform textarea {
+  border: 1px solid #aaa ;  
+}
+.stdform table {
+  margin: 10px 5px ;
+  padding: 5px ;
+}
+
+/** comments */
+.comment { 
+  border-top: 1px solid #ddd ; 
+  margin-bottom: 15px ;
+  font-size: 8pt ;
+}
+
+.cmttitle { 
+ padding-left: 10px ;        
+}
+
+.cmtcontent {
+  padding-top: 5px ;
+  padding-left: 35px ;  
+}
+
+/**
+ * status bar
+ */
+.errorbar, .successbar {
+  text-align: center ;    
+  margin: 10px 5px ;
+  padding: 15px 5px ;
+}
+
+.errorbar {
+  border: 1px solid #e18b91 ;
+  background-color: #ffc1c1 ;
+}
+
+.successbar {
+  border: 1px solid #81d59c ;
+  background-color: #c1ffd4 ;
+}
+
+/**
+ * moderation
+ */ 
+.moderate {
+  border: 1px solid #bbb ;
+  font-size: 8pt ;  
+}
+.moderate td {
+  border: 1px solid #ddd ;
+}

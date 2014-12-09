@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://tech-algorithm.com/articles/boxfiltering/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Tech-Algorithm.com ~ Box Filtering</title>
+  
+  <meta name="description" content="An article repository of various technical algorithm including neural network, graph theory, graphic programming, and image processing written especially for programmers. Selected article has Java implementation example or applet with working source code.">
+  <meta name="keywords" content="Technical,Algorithm,Neural Network,Path Finding,Optimization,Image Processing,Java">
+  <meta name="verify-v1" content="Ys3qfouLG12MB9QDA6ZyMqeOEolaAoPmZF6fmvsXLIw=">
+  <link rel="stylesheet" href="./Tech-Algorithm.com ~ Box Filtering_files/default.css" type="text/css">
+</head>
+
+<body>
+
+<!-- header -->
+<div id="header">  
+  <div id="header-image"><!-- --></div>
+  <div id="header-text"><h1>Tech-Algorithm.com</h1></div>  
+  <div id="header-smalltext">Algorithm and Programing</div>  
+</div>
+
+<!-- container -->
+<div id="container">  
+  <!-- top navigation -->
+  <div class="topnav"><a href="http://tech-algorithm.com/">home</a> | <a href="http://tech-algorithm.com/news.php">news</a> | <a href="http://tech-algorithm.com/contact.php">contact</a> | <a href="http://tech-algorithm.com/about.php">about</a></div>
+  
+  <!-- content -->
+  <div id="content">
+    
+    <!-- contents here -->
+        <!-- share css with news -->
+    <div class="news">        
+      <div class="newstitle">Box Filtering</div>
+      <div class="newsinfo">7 October 2007, 02:57 AM</div>      
+      <div class="linebreak"><!-- --></div>      
+      <div class="newscontent">
+          <div class="AddSquare">
+<script async="" type="text/javascript" src="./Tech-Algorithm.com ~ Box Filtering_files/ca-pub-4359746838198501.js"></script><script type="text/javascript"><!--
+google_ad_client = "ca-pub-4359746838198501";
+/* Tech - SmallSquares */
+google_ad_slot = "0704833346";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript" src="./Tech-Algorithm.com ~ Box Filtering_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe width="200" height="200" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+          </div>
+          Box filtering is basically an average-of-surrounding-pixel kind of image filtering.  It is actually a convolution filter which is a commonly used mathematical operation for image filtering.  A convolution filters provide a method of multiplying two arrays to produce a third one.  In box filtering, <i>image sample</i> and the <i>filter kernel</i> are multiplied to get the <i>filtering result</i>.  The filter kernel is like a description of how the filtering is going to happen, it actually defines the type of filtering.  The power of box filtering is one can write a general image filter that can do sharpen, emboss, edge-detect, smooth, motion-blur, etcetera.  Provided approriate filter kernel is used.
+<br>
+<br>Now that I probably had wet your appetite let us see further the coolness of box filtering and its filter kernel.  A filter kernel defines filtering type, but what exactly is it?  Think of it as a fixed size small box or window larger than a pixel.  Imagine that it slides over the sample image through all positions.  While doing so, it constantly calculates the average of what it sees through its window.
+<br>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-img01.png" alt="bf-img01.png">
+<br>
+<br>The minimum standard size of a filter kernel is 3x3, as shown in above diagram.  Due to the rule that a filter kernel must fit within the boundary of sampling image, no filtering will be applied on all four sides of the image in question.  With special treatment, it can be done, but what is more important than making the basic work first?  Enough talk, lets get to the implementation asap!
+<br>
+<br><pre class="javasnip"><b class="keywords">public</b> <b class="keywords">int</b>[] BoxFiltering(
+        <b class="keywords">int</b>[] pixels,<b class="keywords">int</b> width, <b class="keywords">int</b> height, <b class="keywords">float</b>[] kernel) {
+    <b class="keywords">int</b>[] temp = <b class="keywords">new</b> <b class="keywords">int</b>[width*height] ;
+    <b class="keywords">float</b> denominator = 0.0f ;
+    <b class="keywords">float</b> red, green, blue ;
+    <b class="keywords">int</b> ired, igreen, iblue, indexOffset, rgb ;
+    <b class="keywords">int</b>[] indices = {
+        -(width + 1),  -width,     -(width - 1), 
+        -1,                0,           +1, 
+        width - 1,      width,      width + 1
+    } ;
+    <b class="keywords">for</b> (<b class="keywords">int</b> i=0;i&lt;kernel.length;i++)
+        denominator += kernel[i] ;
+    <b class="keywords">if</b> (denominator==0.0f) denominator = 1.0f ;
+    <b class="keywords">for</b> (<b class="keywords">int</b> i=1;i&lt;height-1;i++) {
+        <b class="keywords">for</b> (<b class="keywords">int</b> j=1;j&lt;width-1;j++) {
+            red = green = blue = 0.0f ;
+            indexOffset = (i*width)+j ;
+            <b class="keywords">for</b> (<b class="keywords">int</b> k=0;k&lt;kernel.length;k++) {
+                rgb = pixels[indexOffset+indices[k]] ;
+                red += ((rgb &amp; 0xff0000)&gt;&gt;16)*kernel[k] ;
+                green += ((rgb &amp; 0xff00)&gt;&gt;8)*kernel[k] ;
+                blue += (rgb &amp; 0xff)*kernel[k] ;
+            }            
+            ired = (<b class="keywords">int</b>)(red / denominator) ;
+            igreen = (<b class="keywords">int</b>)(green / denominator) ;
+            iblue = (<b class="keywords">int</b>)(blue / denominator) ;
+            <b class="keywords">if</b> (ired&gt;0xff) ired = 0xff ;
+                <b class="keywords">else</b> <b class="keywords">if</b> (ired&lt;0) ired = 0 ;
+            <b class="keywords">if</b> (igreen&gt;0xff) igreen = 0xff ;
+                <b class="keywords">else</b> <b class="keywords">if</b> (igreen&lt;0) igreen = 0 ;
+            <b class="keywords">if</b> (iblue&gt;0xff) iblue = 0xff ;
+                <b class="keywords">else</b> <b class="keywords">if</b> (iblue&lt;0) iblue = 0 ;            
+            temp[indexOffset] = 0xff000000 | ((ired&lt;&lt;16) &amp; 0xff0000) | 
+                    ((igreen&lt;&lt;8) &amp; 0xff00) | (iblue &amp; 0xff) ;
+        }
+    }
+    <b class="keywords">return</b> temp ;
+}</pre>
+<br>
+<br><b>Java code explanation</b>
+<br>
+<br>The parameter pixels is an array containing a total of width*height pixel information.  The parameter kernel is an array with a fixed length of nine.  This is because the implementation assumes a window of size 3x3.  The function also assume each pixel is in the form ARGB (alpha, red, green, blue), where blue is the least significant byte.  Alpha is the transparency information and should just be left untouched.  The array indices is a simple optimization table used to find neighboring pixels.  The denominator is the sum of parameter kernel, it will be the denominator when calculating average.
+<br>
+<br>Check images below to see different kind of kernels gives varying results.  Sample image is from MMORPG game Lineage II.
+<br>
+<br><b>Original unfiltered image.</b>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-kernel-nofilter.gif" alt="bf-kernel-nofilter.gif">
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/la2-nofilter.png" alt="la2-nofilter.png">
+<br>
+<br><b>Smoothing</b>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-kernel-smooth.gif" alt="bf-kernel-smooth.gif">
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/la2-smooth.png" alt="la2-smooth.png">
+<br>
+<br><b>Sharpening</b>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-kernel-sharpen.gif" alt="bf-kernel-sharpen.gif">
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/la2-sharpen.png" alt="la2-sharpen.png">
+<br>
+<br><b>Raised</b>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-kernel-raise.gif" alt="bf-kernel-raise.gif">
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/la2-raise.png" alt="la2-raise.png">
+<br>
+<br><b>Motion-blur</b>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-kernel-mblur.gif" alt="bf-kernel-mblur.gif">
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/la2-motionblur.png" alt="la2-motionblur.png">
+<br>
+<br><b>Edge detection</b>
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/bf-kernel-edge.gif" alt="bf-kernel-edge.gif">
+<br><img src="./Tech-Algorithm.com ~ Box Filtering_files/la2-edge.png" alt="la2-edge.png">
+<br>
+<br>See <a href="http://tech-algorithm.com/index.php?post=32">Box Filtering Java applet interactive demo</a>.
+          <br>
+          <div class="AddLinks">
+          <script type="text/javascript"><!--
+google_ad_client = "ca-pub-4359746838198501";
+/* Tech - LinkUnit */
+google_ad_slot = "5845495555";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="./Tech-Algorithm.com ~ Box Filtering_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+          </div>
+      </div>
+      <div class="clearfloat"><!-- --></div>
+      <div class="linebreak vspace"><!-- --></div>
+      <div class="newsinfo">Last edited on 29 March 2009</div>
+      
+      <!-- comments -->
+      <h3>Comments</h3>
+    </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>guest</b>, 17 April 2010, 10:46 PM</div>    
+    <div class="cmtcontent">Is the "Box-filtering" in this article same as the proposed in the paper "Box-filtering techniques<br>Computer Graphics and Image Processing, Volume 17, Issue 1, Pages 65-70<br>M. McDonnell".</div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>John</b>, 24 April 2010, 11:50 PM</div>    
+    <div class="cmtcontent">Hi guest,<br><br>If you meant the paper from <br><br>http://www.sciencedirect.com/science?_ob=ArticleURL&amp;_udi=B7GXF-4KHBY6B-7&amp;_user=10&amp;_coverDate=09%2F30%2F1981&amp;_rdoc=1&amp;_fmt=high&amp;_orig=search&amp;_sort=d&amp;_docanchor=&amp;view=c&amp;_searchStrId=1309228100&amp;_rerunOrigin=google&amp;_acct=C000050221&amp;_version=1&amp;_urlVersion=0&amp;_userid=10&amp;md5=18deed3e12377661d566a6c338f23223<br><br>then I cannot say because I don't have access to it. However the "Box Filtering" concept as in filter kernel is probably the same except for the difference in implementation (maybe other than 3x3?).</div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>P</b>, 29 January 2012, 12:58 AM</div>    
+    <div class="cmtcontent">Hi, you use Lineage2 art image. Very impressive.<br>Can I translate this blog into Korean and post my blog? I will let you know the link and give you credit. :)</div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>John</b>, 30 January 2012, 11:40 PM</div>    
+    <div class="cmtcontent">Hi P,<br>Sure why not!<br>:)</div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>P</b>, 31 January 2012, 06:55 PM</div>    
+    <div class="cmtcontent">I posted the blog at http://parkpd.egloos.com/3800302<br>Thanks for your interesting blog. :)</div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>J</b>, 2 March 2013, 06:29 AM</div>    
+    <div class="cmtcontent">hey can i have a pdf for McDonnells book or other articles for box filtering or even an implementation in C or such, i just need the algorithm.. Im working on stereo vision, thanks. :)<br></div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>Johan</b>, 15 June 2014, 01:12 AM</div>    
+    <div class="cmtcontent">I am unfortunately not into Java. I use C.<br>Can somebody please explain to me  the indices array and its use? The rest of this impressive article I can understand.<br>Please be so kind as to email to smitjs@vodamail.co.za in case I dont see ny reply.</div>
+  </div>  
+  <div class="comment">
+    <div class="cmttitle">~<b>Johan</b>, 15 June 2014, 02:03 AM</div>    
+    <div class="cmtcontent">Sorry, please ignore my ignorant previous post.<br>I now see that the indices array simply gives one the pixel at (x+1,y-1),(x,y-1),x-1,y-1) etc.<br>I am amazed that it took so long to realize this.<br>Well, we cannot be perfect all the time.<br>Still, the article is most informative, thank you<br>Johan Smit</div>
+  </div>    
+    <!-- share news css -->
+    <div class="news">
+      <div class="newstitle">Post a comment~</div>      
+      <form method="post" action="http://tech-algorithm.com/index.php">
+      <div class="stdform">    
+      <table>
+        <tbody><tr><td>Name*</td></tr>
+        <tr><td><input class="field" type="text" name="addcommentpostername"></td></tr>
+        <tr><td><b>algorithm</b> has how many characters?*</td></tr>
+        <tr><td><input class="field" type="text" name="questionanswer"></td></tr>
+        <tr><td>Comment*</td></tr>
+        <tr><td><textarea rows="10" cols="50" name="addcommenttext"></textarea></td></tr>
+        <tr><td><input class="button" type="submit" value="post"></td></tr>
+        <tr><td><b>Notes:</b> The comment system is moderated.<br>Meaning your comment will not show until reviewed.</td></tr>
+      </tbody></table>
+      </div>    
+      <input type="hidden" name="addcommentparent" value="28">
+      <input type="hidden" name="questionid" value="5">
+      </form>
+    </div>        
+        
+  </div>
+  
+  <!-- right block -->
+  <div id="rightblock">        
+    <div class="floatstop">
+      <div class="floatstitle">Category</div>
+      <div class="raquolink">» <a href="http://tech-algorithm.com/index.php?category=1">Neural Network</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/index.php?category=2">Path Finding</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/index.php?category=3">Image Processing</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/index.php?category=4">Graphics Programing</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/index.php?category=13">Sorting</a></div>      
+    </div><div class="floatstop">
+      <div class="floatstitle">Recent Posts</div>
+      <div class="raquolink">» <a href="http://tech-algorithm.com/articles/quicksort/">Quicksort</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/shell-sort/">Shell Sort</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/insertion-sort/">Insertion Sort</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/selection-sort/">Selection Sort</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/bubble-sort/">Bubble Sort</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/trilinear-interpolation-image-scaling/">Trilinear Interpolation Image Scaling</a></div>      
+    </div><div class="floatstop">
+      <div class="floatstitle">Popular Posts</div>
+      <div class="raquolink">» <a href="http://tech-algorithm.com/articles/nearest-neighbor-image-scaling/">Nearest Neighbor Image Scaling</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/drawing-line-using-bresenham-algorithm/">Drawing Line Using Bresenham Algorithm</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/bilinear-image-scaling/">Bilinear Image Scaling</a></div><div class="raquolink">» <a href="./Tech-Algorithm.com ~ Box Filtering_files/Tech-Algorithm.com ~ Box Filtering.html">Box Filtering</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/dijkstra-algorithm-applet/">Dijkstra's algorithm java applet interactive demo</a></div><div class="raquolink">» <a href="http://tech-algorithm.com/articles/dijkstra-algorithm/">Dijkstra's algorithm</a></div>      
+    </div>
+  </div>
+  
+  <div class="clearfloat"><!-- --></div>
+</div>
+
+<div id="footer">Page generated in 0.0865 seconds | Best viewed with Firefox<br>© 2007 - 2014 Tech-Algorithm.com</div>
+
+<script src="./Tech-Algorithm.com ~ Box Filtering_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2713096-1";
+urchinTracker();
+</script>
+<script type="text/javascript" src="./Tech-Algorithm.com ~ Box Filtering_files/default.js"></script>
+
+
+
+</body></html>

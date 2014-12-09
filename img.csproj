@@ -62,9 +62,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cudafy.NET, Version=1.25.4963.10126, Culture=neutral, PublicKeyToken=63a4c9931616906b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\CUDAfy.NET.1.25.4963.10126\lib\net40\Cudafy.NET.dll</HintPath>
+    <Reference Include="Cudafy.NET">
+      <HintPath>packages\CUDAfy.NET.1.27.5314.36419\lib\net40\Cudafy.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -79,7 +78,11 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Convertor.cs" />
+    <Compile Include="CudaBoxFilter.cs" />
     <Compile Include="CudafyMedianFilter.cs" />
+    <Compile Include="CudaGaussFilter.cs" />
+    <Compile Include="CudaMedianFilter.cs" />
+    <Compile Include="CudaNoneFilter.cs" />
     <Compile Include="Exp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +96,7 @@
       <DependentUpon>ImagePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="IFilter.cs" />
-    <Compile Include="MedianFilter.cs" />
+    <Compile Include="NativeMedianFilter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +104,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MpiMedianFilter.cs" />
+    <Compile Include="NoiseFilter.cs" />
     <Compile Include="Priview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,8 +170,8 @@
     <Content Include="synfig_icon_2485.ico" />
     <Content Include="Tools\cudafycl.exe" />
     <Content Include="Tools\cudafyclx86.exe" />
-    <Content Include="Tools\CudafyModuleViewer.exe" />
-    <Content Include="Tools\CudafyModuleViewerx86.exe" />
+    <Content Include="Tools\CudafyViewer.exe" />
+    <Content Include="Tools\CudafyViewerx86.exe" />
     <Content Include="Tools\place_these_executables_in_same_folder_as_Cudafy.NET.dll.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -190,10 +194,6 @@
     <ProjectReference Include="..\MyMathLibrary\MyMath\MyMath.csproj">
       <Project>{5f759e1e-27bb-4127-ae22-d220f6afbc71}</Project>
       <Name>MyMath</Name>
-    </ProjectReference>
-    <ProjectReference Include="mpifilter\MpiFilter.vcxproj">
-      <Project>{3a16fbe3-a73b-4ff7-8e93-9581964557dc}</Project>
-      <Name>mpifilter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

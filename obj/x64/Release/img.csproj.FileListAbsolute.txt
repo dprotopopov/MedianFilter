@@ -18,3 +18,9 @@ D:\Projects\MedianFilter\obj\x64\Release\img.Settings.resources
 D:\Projects\MedianFilter\obj\x64\Release\img.csproj.GenerateResource.Cache
 D:\Projects\MedianFilter\obj\x64\Release\img.exe
 D:\Projects\MedianFilter\obj\x64\Release\img.pdb
+D:\Projects\MedianFilter\bin\x64\Release\MiniMax.dll
+D:\Projects\MedianFilter\bin\x64\Release\MyFormula.dll
+D:\Projects\MedianFilter\bin\x64\Release\MyMath.dll
+D:\Projects\MedianFilter\bin\x64\Release\MiniMax.pdb
+D:\Projects\MedianFilter\bin\x64\Release\MyFormula.pdb
+D:\Projects\MedianFilter\bin\x64\Release\MyMath.pdb

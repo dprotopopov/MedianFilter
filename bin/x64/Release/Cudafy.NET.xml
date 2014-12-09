@@ -7336,6 +7336,75 @@
             Gets the context.
             </summary>
     </member>
+    <member name="T:Cudafy.Host.DeviceTypeInfo">
+      <summary>
+            For a class, and instance of which we want to move onto the Device, we create a new representation of the instance on the device.
+            This is the DeviceType, which basically has reference type fields replaced by IntPtrs to device memory.
+            </summary>
+    </member>
+    <member name="T:Cudafy.Host.DeviceClassHelper">
+      <summary>
+            Helper that can create an instance of a class or struct on the device, given an instance of
+            a Cudafyable class on the CPU.
+            Any reference type members of the class become pointers to the member (in device memory). 
+            Any value type members must be blittable.
+            A one-to-one map of objects on the host and objects on the device is maintained so that instances that share an array on
+            the host share the same array on the device.
+            </summary>
+    </member>
+    <member name="F:Cudafy.Host.DeviceClassHelper.deviceObjectFromHostObject">
+      <summary>
+            This provides a mapping of the host object to the object that encapsulates the device pointer (via _deviceMemory).
+            </summary>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.TryGetDeviceObjectFromHostObject(Cudafy.Host.GPGPU,System.Object)">
+      <summary>
+            Returns the device object that is mapped to the host object.
+            </summary>
+      <param name="gpu"></param>
+      <param name="hostObject"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.TryGetDeviceMemoryFromHostObject(Cudafy.Host.GPGPU,System.Object)">
+      <summary>
+            Returns the device pointer for the device object that is mapped to the host object.
+            </summary>
+      <param name="gpu"></param>
+      <param name="hostObject"></param>
+      <returns></returns>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.CreateDeviceObject``1(Cudafy.Host.GPGPU,``0)">
+      <summary>
+            Creates a version of hostObject on the device with any fields which are reference types converted
+            to pointers to device memory (IntPtrs) and any arrays copied to the device.
+            </summary>
+      <typeparam name="T"></typeparam>
+      <param name="gpu"></param>
+      <param name="hostObject"></param>
+      <returns>THe device object (that can then be used in kernal calls).</returns>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.UpdateFromDevice``1(Cudafy.Host.GPGPU,``0)">
+      <summary>
+            Update any array fields of an object where the arrays are on the device. 
+            </summary>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.CopyReferenceTypeFieldsToDevice``1(Cudafy.Host.GPGPU,``0)">
+      <summary>
+            Copies any reference type fields (e.g. arrays) of the object to the device.
+            </summary>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.CreateDeviceType(System.Type)">
+      <summary>
+            Create type that contains pointers to device arrays.
+            </summary>
+    </member>
+    <member name="M:Cudafy.Host.DeviceClassHelper.GetFieldsStandardLayout(System.Type)">
+      <summary>
+            Get fields in the same order in which these would appear in memory for the device object (i.e. standard layout rules).
+            </summary>
+      <param name="type"></param>
+      <returns></returns>
+    </member>
     <member name="T:Cudafy.Host.DynamicLauncher">
       <summary>
             Allows GPU functions to be called using dynamic language run-time. For example:
@@ -12723,6 +12792,15 @@
             </summary>
       <value>
         <c>true</c> if compile for debug; otherwise, <c>false</c>.
+            </value>
+    </member>
+    <member name="P:Cudafy.Translator.CudafyTranslator.AllowClasses">
+      <summary>
+            Gets or sets a value indicating whether to allow classes to be Cudafyed. 
+            Note that DeviceClassHelper utility can be used to move class objects from Host to Device.
+            </summary>
+      <value>
+        <c>true</c> if classes are permitted; otherwise, <c>false</c>.
             </value>
     </member>
     <member name="P:Cudafy.Translator.CudafyTranslator.DeleteTempFiles">
@@ -19582,6 +19660,22 @@
             automatically be marked global. Ignored when translating to CUDA.
             </summary>
     </member>
+    <member name="T:Cudafy.CudafyInlineAttribute">
+      <summary>
+            Optionally placed on methods to indicate whether the method should be inlined or not.
+            </summary>
+    </member>
+    <member name="M:Cudafy.CudafyInlineAttribute.#ctor(Cudafy.eCudafyInlineMode)">
+      <summary>
+            Constructor.
+            </summary>
+      <param name="mode"></param>
+    </member>
+    <member name="P:Cudafy.CudafyInlineAttribute.Mode">
+      <summary>
+            Gets the inline mode.
+            </summary>
+    </member>
     <member name="T:Cudafy.Compilers.CompilerOptions">
       <summary>
             Abstract base class for options.
@@ -20077,6 +20171,11 @@
             Unspecified architecture.
             </summary>
     </member>
+    <member name="F:Cudafy.eArchitecture.Emulator">
+      <summary>
+            CUDA Emulator
+            </summary>
+    </member>
     <member name="F:Cudafy.eArchitecture.sm_10">
       <summary>
             CUDA sm_10
@@ -20200,6 +20299,26 @@
     <member name="F:Cudafy.eCudafyCompileMode.TranslateOnly">
       <summary>
             Translate but do not compile.
+            </summary>
+    </member>
+    <member name="T:Cudafy.eCudafyInlineMode">
+      <summary>
+            Controls the inline type.
+            </summary>
+    </member>
+    <member name="F:Cudafy.eCudafyInlineMode.Auto">
+      <summary>
+            Default - let the compiler choose.
+            </summary>
+    </member>
+    <member name="F:Cudafy.eCudafyInlineMode.No">
+      <summary>
+            __noinline__
+            </summary>
+    </member>
+    <member name="F:Cudafy.eCudafyInlineMode.Force">
+      <summary>
+            __forceinline__
             </summary>
     </member>
     <member name="T:Cudafy.GES">
@@ -20618,6 +20737,60 @@
       <param name="x">The x.</param>
       <param name="y">The y.</param>
       <returns>Returns the most significant 32 bits of the product x * y.</returns>
+    </member>
+    <member name="M:Cudafy.SIMDFunctions.SIMDFuncs.ProcessHalfWords(System.String,System.UInt32)">
+      <summary>
+            Break the 32-bit input word into two 16-bit halfwords and pass them off to be processed separately.
+            </summary>
+      <param name="fnName">function name to be passed along to method ProcessHalfWord</param>
+      <param name="a">32-bit word to be broken into two halfwords</param>
+      <returns>32-bit word assembled from two halfwords</returns>
+    </member>
+    <member name="M:Cudafy.SIMDFunctions.SIMDFuncs.ProcessHalfWords(System.String,System.UInt32,System.UInt32)">
+      <summary>
+            Break each 32-bit input word into two 16-bit halfwords and pass them off to be processed separately.
+            </summary>
+      <param name="fnName">function name to be passed along to method ProcessHalfWord</param>
+      <param name="a">32-bit word to be broken into two halfwords</param>
+      <param name="b">32-bit word to be broken into two halfwords</param>
+      <returns>32-bit word assembled from two halfwords</returns>
+    </member>
+    <member name="M:Cudafy.SIMDFunctions.SIMDFuncs.SumHalfWords(System.String,System.UInt32,System.UInt32)">
+      <summary>
+            Break each 32-bit input word into two 16-bit halfwords and pass them off to be processed separately.
+            Sum the results.
+            </summary>
+      <param name="fnName">function name to be passed along to method ProcessHalfWord</param>
+      <param name="a">32-bit word to be broken into two halfwords</param>
+      <param name="b">32-bit word to be broken into two halfwords</param>
+      <returns>32-bit word -- sum of two halfwords</returns>
+    </member>
+    <member name="M:Cudafy.SIMDFunctions.SIMDFuncs.ProcessBytes(System.String,System.UInt32)">
+      <summary>
+            Break the 32-bit input word into four bytes and pass them off to be processed separately.
+            </summary>
+      <param name="fnName">function name to be passed along to method ProcessByte</param>
+      <param name="a">32-bit word to be broken into four bytes</param>
+      <returns>32-bit word assembled from four bytes</returns>
+    </member>
+    <member name="M:Cudafy.SIMDFunctions.SIMDFuncs.ProcessBytes(System.String,System.UInt32,System.UInt32)">
+      <summary>
+            Break each 32-bit input word into four bytes and pass them off to be processed separately.
+            </summary>
+      <param name="fnName">function name to be passed along to method ProcessByte</param>
+      <param name="a">32-bit word to be broken into four bytes</param>
+      <param name="b">32-bit word to be broken into four bytes</param>
+      <returns>32-bit word assembled from four bytes</returns>
+    </member>
+    <member name="M:Cudafy.SIMDFunctions.SIMDFuncs.SumBytes(System.String,System.UInt32,System.UInt32)">
+      <summary>
+            Break each 32-bit input word into four bytes and pass them off to be processed separately.
+            Sum the results.
+            </summary>
+      <param name="fnName">function name to be passed along to method ProcessByte</param>
+      <param name="a">32-bit word to be broken into four bytes</param>
+      <param name="b">32-bit word to be broken into four bytes</param>
+      <returns>32-bit word -- sum of four bytes</returns>
     </member>
     <member name="T:Cudafy.GBlock">
       <summary>
@@ -22010,7 +22183,7 @@
     </member>
     <member name="F:Cudafy.CV.csVERSION">
       <summary>
-            Version 1.25.*
+            Version 1.26.*
             </summary>
     </member>
     <member name="T:Cudafy.Crc32">

@@ -1,0 +1,55 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="0ECE0FC2-DEB3-4F20-A2B8-64D0302387E7/f:GomorySolver.cs" caret="25072" fromTop="19" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:Settings.Designer.cs" caret="28240" fromTop="18" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaMedianFilter.cs" caret="512" fromTop="0" />
+    <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="1876" fromTop="15" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="2780" fromTop="26" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:Settings.cs" caret="2627" fromTop="14" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:NativeMedianFilter.cs" caret="885" fromTop="19" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MpiMedianFilter.cs" caret="272" fromTop="0" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudafyMedianFilter.cs" caret="876" fromTop="5" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:IFilter.cs" caret="249" fromTop="11" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:NoiseFilter.cs" caret="1819" fromTop="66" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaGaussFilter.cs" caret="1903" fromTop="20" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaNoneFilter.cs" caret="1234" fromTop="6" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaBoxFilter.cs" caret="2041" fromTop="20" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:Exp.cs" caret="5265" fromTop="3" />
+    <File id="3ACC3437-2776-4044-AF79-81398FE41F65/f:cudaboxfilter.cu" caret="3915" fromTop="0" />
+    <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="2848" fromTop="21" />
+    <File id="3A16FBE3-A73B-4FF7-8E93-9581964557DC/f:mpimedianfilter.cpp" caret="1388" fromTop="15" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="10863" fromTop="92" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="4482" fromTop="16" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="5469" fromTop="26" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="4281" fromTop="23" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="1331" fromTop="16" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudafyMedianFilter.cs" caret="876" fromTop="14" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaMedianFilter.cs" caret="763" fromTop="14" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaMedianFilter.cs" caret="225" fromTop="11" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MpiMedianFilter.cs" caret="854" fromTop="14" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MpiMedianFilter.cs" caret="272" fromTop="10" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:NativeMedianFilter.cs" caret="876" fromTop="16" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="5611" fromTop="16" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="9959" fromTop="20" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="9936" fromTop="19" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="10314" fromTop="20" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="10620" fromTop="12" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="9425" fromTop="0" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="14382" fromTop="36" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="12568" fromTop="8" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="13189" fromTop="20" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="16646" fromTop="39" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="14891" fromTop="9" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="15453" fromTop="20" />
+    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="10863" fromTop="11" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="3007" fromTop="6" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="4864" fromTop="21" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="1985" fromTop="14" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="2018" fromTop="13" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="2388" fromTop="18" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="1320" fromTop="14" />
+    <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="1568" fromTop="22" />
+  </RecentEdits>
+</RecentFiles>

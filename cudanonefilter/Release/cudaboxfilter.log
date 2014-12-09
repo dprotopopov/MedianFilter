@@ -1,0 +1,35 @@
+﻿Построение начато 09.12.2014 5:30:48.
+     1>Проект "D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.vcxproj" в узле 3 (целевые объекты Rebuild).
+     1>CudaClean:
+         cmd.exe /C "R:\Temp\tmpd2d4e799b60f4c218756e5cb684a6f23.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile      -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o Release\cudaboxfilter.cu.obj "D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.cu" -clean
+         
+         D:\Projects\MedianFilter\cudaboxfilter>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile      -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o Release\cudaboxfilter.cu.obj "D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.cu" -clean 
+       AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DNDEBUG /D_CONSOLE /D_LIB /D_UNICODE /DUNICODE /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" /I. /FIcuda_runtime.h /c D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.cu 
+       CudaBuild:
+         Compiling CUDA source file cudaboxfilter.cu...
+         cmd.exe /C "R:\Temp\tmp60dd376fbc9b43449450e489b86fee59.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile -cudart static     -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o Release\cudaboxfilter.cu.obj "D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.cu"
+         
+         D:\Projects\MedianFilter\cudaboxfilter>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir Release -maxrregcount=0  --machine 32 --compile -cudart static     -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o Release\cudaboxfilter.cu.obj "D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.cu" 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\MedianFilter\Release\cudaboxfilter.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\Win32" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\MedianFilter\Release\cudaboxfilter.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\MedianFilter\Release\cudaboxfilter.lib" /MACHINE:X86 /SAFESEH Release\cudaboxfilter.cu.obj
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaGetDeviceCount@4"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaFree@4"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaMalloc@8"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaDeviceReset@0"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaGetDeviceProperties@8"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaConfigureCall@32"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaSetupArgument@12"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaLaunch@4"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "_cudaMemcpy@16"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "___cudaRegisterFatBinary@4"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "___cudaUnregisterFatBinary@4"
+     1>cudaboxfilter.cu.obj : error LNK2001: неразрешенный внешний символ "___cudaRegisterFunction@40"
+     1>D:\Projects\MedianFilter\Release\cudaboxfilter.exe : fatal error LNK1120: неразрешенных внешних элементов: 12
+     1>Построение проекта "D:\Projects\MedianFilter\cudaboxfilter\cudaboxfilter.vcxproj" завершено (целевые объекты Rebuild) с ошибкой.
+
+Сбой построения.
+
+Затраченное время: 00:00:07.65

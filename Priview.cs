@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using YLScsImage;
 
@@ -15,12 +10,12 @@ namespace img
         {
             InitializeComponent();
             imagePanel1.Image = bmp;
-            imagePanel1.MouseWheel += new MouseEventHandler(pb1_MouseWheel);
+            imagePanel1.MouseWheel += pb1_MouseWheel;
         }
 
-        void pb1_MouseWheel(object sender, MouseEventArgs e)
+        private void pb1_MouseWheel(object sender, MouseEventArgs e)
         {
-            ImagePanel pb1 = (ImagePanel)(sender);
+            var pb1 = (ImagePanel) (sender);
             if (e.Delta > 0)
             {
                 if (pb1.Image != null)

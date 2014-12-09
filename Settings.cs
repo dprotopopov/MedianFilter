@@ -27,6 +27,12 @@ namespace img
             set { numericUpDownMedian.Value = value; }
         }
 
+        public double Gauss
+        {
+            get { return (double) numericUpDownGauss.Value; }
+            set { numericUpDownGauss.Value = (decimal) value; }
+        }
+
         public int SCI
         {
             get { return (int) numericUpDownSCI.Value; }
@@ -51,16 +57,28 @@ namespace img
             set { numericUpDownVideoMemorySize.Value = value; }
         }
 
-        public int GridSize
+        public int CudafyGridSize
         {
-            get { return Convert.ToInt32(numericUpDownGridSize.Value); }
-            set { numericUpDownGridSize.Value = value; }
+            get { return Convert.ToInt32(numericUpDownCudafyGridSize.Value); }
+            set { numericUpDownCudafyGridSize.Value = value; }
         }
 
-        public int BlockSize
+        public int CudafyBlockSize
         {
-            get { return Convert.ToInt32(numericUpDownBlockSize.Value); }
-            set { numericUpDownBlockSize.Value = value; }
+            get { return Convert.ToInt32(numericUpDownCudafyBlockSize.Value); }
+            set { numericUpDownCudafyBlockSize.Value = value; }
+        }
+
+        public int CudaGridSize
+        {
+            get { return Convert.ToInt32(numericUpDownCudaGridSize.Value); }
+            set { numericUpDownCudaGridSize.Value = value; }
+        }
+
+        public int CudaBlockSize
+        {
+            get { return Convert.ToInt32(numericUpDownCudaBlockSize.Value); }
+            set { numericUpDownCudaBlockSize.Value = value; }
         }
 
         public bool IsNativeEngine
@@ -71,6 +89,11 @@ namespace img
         public bool IsCudafyEngine
         {
             get { return radioButtonCudafyEngine.Checked; }
+        }
+
+        public bool IsCudaEngine
+        {
+            get { return radioButtonCudaEngine.Checked; }
         }
 
         public bool IsMpiEngine
@@ -85,8 +108,8 @@ namespace img
             if (CudaBuildChooseDialog.ShowDialog() != DialogResult.OK) return;
             MyLibrary.Collections.Properties values = CudaBuildChooseDialog.Values;
             if (values == null) return;
-            GridSize = 1;
-            BlockSize = Convert.ToInt32(values["N"]);
+            CudafyGridSize = 1;
+            CudafyBlockSize = Convert.ToInt32(values["N"]);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -95,6 +118,18 @@ namespace img
             MyLibrary.Collections.Properties values = MpiBuildChooseDialog.Values;
             if (values == null) return;
             NumberOfProcess = Convert.ToInt32(values["P"]);
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void radioButtonNativeEngine_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
         }
     }
 }

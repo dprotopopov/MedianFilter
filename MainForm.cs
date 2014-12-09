@@ -23,8 +23,8 @@ namespace img
             {
                 _tabs = new List<TabPage>();
                 tabControl1.Selected += tabControl1_Selected;
-                var cudaBuildChooseDialog = new BuildChooseDialog(typeof(MyCudaFormula));
-                var mpiBuildChooseDialog = new BuildChooseDialog(typeof(MyMpiFormula));
+                var cudaBuildChooseDialog = new BuildChooseDialog(typeof (MyCudaFormula));
+                var mpiBuildChooseDialog = new BuildChooseDialog(typeof (MyMpiFormula));
                 _convertor = new Convertor();
                 _settings = new Settings(3, 15, 0)
                 {
@@ -256,16 +256,22 @@ namespace img
             try
             {
                 DateTime dateTime = DateTime.Now;
-                Cursor = Cursors.AppStarting;
                 TabPage tabPage = tabControl1.SelectedTab;
                 var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
-                IFilter filter;
-                if (_settings.IsCudafyEngine)
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaMedianFilter(new Bitmap(imagePanel.Image),
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize,
+                        _settings.Median);
+                }
+                else if (_settings.IsCudafyEngine)
                 {
                     filter = new CudafyMedianFilter(new Bitmap(imagePanel.Image),
                         _settings.VideoMemorySize << 10,
-                        _settings.GridSize,
-                        _settings.BlockSize,
+                        _settings.CudafyGridSize,
+                        _settings.CudafyBlockSize,
                         _settings.Median);
                 }
                 else if (_settings.IsMpiEngine)
@@ -274,10 +280,13 @@ namespace img
                         _settings.NumberOfProcess,
                         _settings.Median);
                 }
-                else
+                else if (_settings.IsNativeEngine)
                 {
-                    filter = new MedianFilter(new Bitmap(imagePanel.Image), _settings.Median);
+                    filter = new NativeMedianFilter(new Bitmap(imagePanel.Image), _settings.Median);
                 }
+                if (filter == null) return;
+
+                Cursor = Cursors.AppStarting;
                 filter.Filter();
                 var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
                 TimeSpan timeSpan = DateTime.Now - dateTime;
@@ -308,6 +317,188 @@ namespace img
                 right.Enabled = true;
                 imagePanel.Zoom = 1;
                 pb2.Zoom = 1;
+
+                #endregion
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, exc.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void gauss_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaGaussFilter(new Bitmap(imagePanel.Image),
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize,
+                        _settings.Gauss);
+                }
+                if (filter == null) return;
+                
+                Cursor = Cursors.AppStarting;
+                filter.Filter();
+                var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
+
+                #region params
+
+                if (tabPage.Tag.ToString() == ".sci")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
+                    imagePanel.Tag = ".sci";
+                    pb2.Tag = ".sci";
+                }
+
+                if (tabPage.Tag.ToString() == ".bmp")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
+                    imagePanel.Tag = ".bmp";
+                    pb2.Tag = ".bmp";
+                }
+
+                pb2.Image = filter.GetNewBmp;
+                OpenLogic(tabPage);
+
+                left.Enabled = true;
+                right.Enabled = true;
+                imagePanel.Zoom = 1;
+                pb2.Zoom = 1;
+
+                #endregion
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, exc.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void none_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaNoneFilter(new Bitmap(imagePanel.Image),
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize);
+                }
+                if (filter == null) return;
+
+                Cursor = Cursors.AppStarting;
+                filter.Filter();
+                var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
+
+                #region params
+
+                if (tabPage.Tag.ToString() == ".sci")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
+                    imagePanel.Tag = ".sci";
+                    pb2.Tag = ".sci";
+                }
+
+                if (tabPage.Tag.ToString() == ".bmp")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
+                    imagePanel.Tag = ".bmp";
+                    pb2.Tag = ".bmp";
+                }
+
+                pb2.Image = filter.GetNewBmp;
+                OpenLogic(tabPage);
+
+                left.Enabled = true;
+                right.Enabled = true;
+                imagePanel.Zoom = 1;
+                pb2.Zoom = 1;
+
+                #endregion
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, exc.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void box_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                Cursor = Cursors.AppStarting;
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaBoxFilter(new Bitmap(imagePanel.Image),
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize);
+                }
+                if (filter != null)
+                {
+                    filter.Filter();
+                    var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                    TimeSpan timeSpan = DateTime.Now - dateTime;
+                    MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
+
+                    #region params
+
+                    if (tabPage.Tag.ToString() == ".sci")
+                    {
+                        _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                        _t2.SetToolTip(pb2, "Формат изображения SCI");
+                        imagePanel.Tag = ".sci";
+                        pb2.Tag = ".sci";
+                    }
+
+                    if (tabPage.Tag.ToString() == ".bmp")
+                    {
+                        _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                        _t2.SetToolTip(pb2, "Формат изображения BMP");
+                        imagePanel.Tag = ".bmp";
+                        pb2.Tag = ".bmp";
+                    }
+
+                    pb2.Image = filter.GetNewBmp;
+                    OpenLogic(tabPage);
+
+                    left.Enabled = true;
+                    right.Enabled = true;
+                    imagePanel.Zoom = 1;
+                    pb2.Zoom = 1;
+                }
 
                 #endregion
 
@@ -368,8 +559,9 @@ namespace img
                 Cursor = Cursors.AppStarting;
                 TabPage tp = tabControl1.SelectedTab;
                 var pb1 = (ImagePanel) ((SplitContainer) tp.Controls[0]).Panel1.Controls[0];
-                var filter = new MedianFilter();
-                pb1.Image = new Bitmap(filter.AddNoise(pb1.Image, _settings.Noise));
+                var noise = new NoiseFilter(pb1.Image, _settings.Noise);
+                noise.Filter();
+                pb1.Image = new Bitmap(noise.GetNewBmp);
 
                 #region params
 
@@ -567,6 +759,21 @@ namespace img
         private void mmedian_Click(object sender, EventArgs e)
         {
             median_Click(sender, e);
+        }
+
+        private void mbox_Click(object sender, EventArgs e)
+        {
+            box_Click(sender, e);
+        }
+
+        private void mgauss_Click(object sender, EventArgs e)
+        {
+            gauss_Click(sender, e);
+        }
+
+        private void mnone_Click(object sender, EventArgs e)
+        {
+            none_Click(sender, e);
         }
 
         private void mconvert_Click(object sender, EventArgs e)

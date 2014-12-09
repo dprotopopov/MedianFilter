@@ -5,15 +5,17 @@ using System.IO;
 
 namespace img
 {
-    internal class MpiMedianFilter : MedianFilter, IFilter
+    internal class MpiMedianFilter : IFilter
     {
-        private readonly byte[][][] _channel;
-        private readonly int _height;
         private readonly int _numberOfProcess;
         private readonly int _step;
-        private readonly int _width;
+        public Bitmap Newbmp;
+        public Bitmap Oldbmp;
+        private byte[][][] _channel;
+        private int _height;
+        private int _width;
 
-        public MpiMedianFilter(Bitmap btm, int numberOfProcess = 5, int step = 3) : base(btm, step)
+        public MpiMedianFilter(Bitmap btm, int numberOfProcess = 5, int step = 3)
         {
             _numberOfProcess = numberOfProcess;
             _step = step;
@@ -22,9 +24,7 @@ namespace img
             if (Oldbmp != null)
                 Oldbmp.Dispose();
             Oldbmp = new Bitmap(btm);
-            Newbmp = new Bitmap(btm.Width, btm.Height);
-            N = step%2 == 0 ? step += 1 : step;
-            Nh = N/2;
+            Newbmp = new Bitmap(btm);
             _width = btm.Width;
             _height = btm.Height;
             _channel = new[]
@@ -34,15 +34,39 @@ namespace img
             };
         }
 
-        public new bool Filter()
+        public Bitmap GetOldBmp
+        {
+            get { return Oldbmp; }
+        }
+
+        public Bitmap SetBmp
+        {
+            set
+            {
+                if (Newbmp != null)
+                    Newbmp.Dispose();
+                Newbmp = new Bitmap(value);
+                Oldbmp = new Bitmap(value);
+                _width = value.Width;
+                _height = value.Height;
+                _channel = new[]
+                {
+                    new[] {new byte[_width*_height], new byte[_width*_height], new byte[_width*_height]},
+                    new[] {new byte[_width*_height], new byte[_width*_height], new byte[_width*_height]}
+                };
+            }
+        }
+
+        public bool Filter()
         {
             try
             {
                 string inputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 string outputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 var buffer = new byte[3*1024];
-                string command = string.Format("/C mpiexec.exe -n {0} mpifilter {1} {2} {3} {4} {5} {6} >> mpi.log",
-                    _numberOfProcess, "median", _step, _width, _height, inputFileName, outputFileName);
+                string command =
+                    string.Format("/C mpiexec.exe -n {0} mpimedianfilter {1} {2} {3} {4} {5} {6} >> mpi.log",
+                        _numberOfProcess, "median", _step, _width, _height, inputFileName, outputFileName);
 
                 for (int y = 0; y < _height; y++)
                     for (int x = 0; x < _width; x++)
@@ -54,13 +78,13 @@ namespace img
                     }
                 using (var writer = new BinaryWriter(File.Open(inputFileName, FileMode.Create)))
                 {
-                    for (int i = 0; i < _width * _height; i += buffer.Length/3)
+                    for (int i = 0; i < _width*_height; i += buffer.Length/3)
                     {
-                        int count = Math.Min(buffer.Length / 3, _width * _height - i);
+                        int count = Math.Min(buffer.Length/3, _width*_height - i);
                         for (int k = 0; k < count; k++)
                             for (int j = 0; j < 3; j++)
                                 buffer[3*k + j] = _channel[0][j][i + k];
-                        writer.Write(buffer, 0, 3 * count);
+                        writer.Write(buffer, 0, 3*count);
                     }
                     writer.Close();
                 }
@@ -76,9 +100,9 @@ namespace img
                     {
                         using (var reader = new BinaryReader(File.Open(outputFileName, FileMode.Open)))
                         {
-                            for (int i = 0; i < _width * _height; i += buffer.Length / 3)
+                            for (int i = 0; i < _width*_height; i += buffer.Length/3)
                             {
-                                int count = Math.Min(buffer.Length / 3, _width * _height - i);
+                                int count = Math.Min(buffer.Length/3, _width*_height - i);
                                 reader.Read(buffer, 0, 3*count);
                                 for (int k = 0; k < count; k++)
                                     for (int j = 0; j < 3; j++)
@@ -105,7 +129,7 @@ namespace img
             return true;
         }
 
-        public new Bitmap GetNewBmp
+        public Bitmap GetNewBmp
         {
             get { return Newbmp; }
         }

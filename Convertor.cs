@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
-using sci2;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Windows.Forms;
+using sci2;
 
 namespace img
 {
-    class Convertor
+    internal class Convertor
     {
-        Bitmap bmp;
-        Image img;
-        double alfa;
-        SCI mySCI;
+        private double alfa;
+        private Bitmap bmp;
+        private Image img;
+        private SCI mySCI;
 
         public Convertor(double alfa = 0)
         {
@@ -29,6 +26,25 @@ namespace img
             this.alfa = alfa;
         }
 
+        public SCI getSCI
+        {
+            get { return mySCI; }
+        }
+
+        public Image SetBMP
+        {
+            set
+            {
+                bmp = new Bitmap(value);
+                img = value;
+            }
+        }
+
+        public double SetAlfa
+        {
+            set { alfa = value; }
+        }
+
         public Image ConvertToSCI()
         {
             byte[] sciimg = SerializeImageToSCI(bmp);
@@ -40,35 +56,35 @@ namespace img
         public Image OpenSCI(string f)
         {
             Stream ss = File.OpenRead(f);
-            BinaryFormatter b = new BinaryFormatter();
-            mySCI = (SCI)b.Deserialize(ss);
+            var b = new BinaryFormatter();
+            mySCI = (SCI) b.Deserialize(ss);
             ss.Close();
 
-            return (Image)decode(mySCI);
+            return decode(mySCI);
         }
 
         public void SaveOnDisk(string f)
         {
             Stream ss = File.OpenWrite(f);
-            BinaryFormatter b = new BinaryFormatter();
-            b.Serialize(ss, SerializeSCI(this.img));
+            var b = new BinaryFormatter();
+            b.Serialize(ss, SerializeSCI(img));
             ss.Close();
         }
 
-        byte[] SerializeImageToSCI(Image img)
+        private byte[] SerializeImageToSCI(Image img)
         {
-            MemoryStream ss = new MemoryStream();
-            BinaryFormatter b = new BinaryFormatter();
+            var ss = new MemoryStream();
+            var b = new BinaryFormatter();
             b.Serialize(ss, SerializeSCI(img));
             byte[] rez = ss.ToArray();
             ss.Close();
             return rez;
         }
 
-        SCI SerializeSCI(Image img)
+        private SCI SerializeSCI(Image img)
         {
-            Bitmap A = (Bitmap)img;
-            SCI mySCI = new SCI();
+            var A = (Bitmap) img;
+            var mySCI = new SCI();
             Bitmap[] all;
             int bs = 32;
 
@@ -76,10 +92,10 @@ namespace img
             int h = A.Height;
 
 
-            int sw = w / bs;
-            int sh = h / bs;
+            int sw = w/bs;
+            int sh = h/bs;
 
-            Bitmap B = new Bitmap((w != sw * bs ? bs : 0) + sw * bs, (h != sh * bs ? bs : 0) + sh * bs);
+            var B = new Bitmap((w != sw*bs ? bs : 0) + sw*bs, (h != sh*bs ? bs : 0) + sh*bs);
 
             mySCI.width = B.Width;
             mySCI.height = B.Height;
@@ -94,10 +110,10 @@ namespace img
                 for (int j = 0; j < h; j++)
                     B.SetPixel(i, j, A.GetPixel(i, j));
 
-            sw = B.Width / bs;
-            sh = B.Height / bs;
+            sw = B.Width/bs;
+            sh = B.Height/bs;
 
-            int bcnt = sw * sh;
+            int bcnt = sw*sh;
 
             all = new Bitmap[bcnt];
 
@@ -111,7 +127,7 @@ namespace img
                     for (int j = 0; j < bs; j++)
                         all[k].SetPixel(i, j, B.GetPixel(i + pi, j + pj));
                 pi += bs;
-                if (pi == sw * bs)
+                if (pi == sw*bs)
                 {
                     pi = 0;
                     pj += bs;
@@ -120,11 +136,11 @@ namespace img
 
             //сжатие в формат SCI
             DateTime nac = DateTime.Now;
-            bcnt = all.Length;     //Всего блоков
+            bcnt = all.Length; //Всего блоков
             mySCI.zam = new int[bcnt]; //Замены
             mySCI.pov = new int[bcnt]; //Повороты
             mySCI.BaseBlocks = new List<Bitmap>();
-            int[] tb = new int[bcnt];  //Взятые блоки
+            var tb = new int[bcnt]; //Взятые блоки
             int povorot = 0;
             for (int i = 0; i < bcnt; i++)
                 if (tb[i] == 0)
@@ -135,7 +151,7 @@ namespace img
                     mySCI.pov[i] = 0;
                     for (int j = i; j < bcnt; j++)
                         if (tb[j] == 0)
-                            if (cmpBlocs(all[i], all[j], ref povorot))   //Нашли одинаковые блоки
+                            if (cmpBlocs(all[i], all[j], ref povorot)) //Нашли одинаковые блоки
                             {
                                 tb[j] = 1;
                                 mySCI.zam[j] = mySCI.BaseBlocks.Count - 1;
@@ -147,7 +163,7 @@ namespace img
             return mySCI;
         }
 
-        bool cmpBlocs(Bitmap b1, Bitmap b2, ref int pov)
+        private bool cmpBlocs(Bitmap b1, Bitmap b2, ref int pov)
         {
             bool rez = true;
             pov = 0;
@@ -155,43 +171,39 @@ namespace img
             for (int i = 0; i < b1.Width; i++)
             {
                 for (int j = 0; j < b1.Height; j++)
-                    if (!cmpColors(b1.GetPixel(i, j), b2.GetPixel(i, j))) { rez = false; break; }
+                    if (!cmpColors(b1.GetPixel(i, j), b2.GetPixel(i, j)))
+                    {
+                        rez = false;
+                        break;
+                    }
                 if (!rez) break;
             }
-            if (rez) return true;   //блоки совпадают без поворота
+            if (rez) return true; //блоки совпадают без поворота
 
             return false; //если оптимизация по времени то выходим иначе пытаемся найти поворот
         }
 
-        bool cmpColors(Color c1, Color c2)
+        private bool cmpColors(Color c1, Color c2)
         {
             double r = Math.Sqrt(Math.Pow(c1.R - c2.R, 2) + Math.Pow(c1.G - c2.G, 2) + Math.Pow(c1.B - c2.B, 2));
-            if (r <= 220 * alfa / 100) return true;
+            if (r <= 220*alfa/100) return true;
             return false;
         }
 
-        Image DeserializeFromSCI(byte[] sciimg)
+        private Image DeserializeFromSCI(byte[] sciimg)
         {
-            MemoryStream ms = new MemoryStream(sciimg);
-            BinaryFormatter b = new BinaryFormatter();
-            mySCI = (SCI)b.Deserialize(ms);
+            var ms = new MemoryStream(sciimg);
+            var b = new BinaryFormatter();
+            mySCI = (SCI) b.Deserialize(ms);
             ms.Close();
-            return (Image)decode(mySCI);
-        }
-
-        public SCI getSCI
-        {
-            get
-            {
-                return this.mySCI;
-            }
+            return decode(mySCI);
         }
 
         public Bitmap decode(SCI img)
         {
-            Bitmap rez = new Bitmap(img.width, img.height);
-            int cols = img.width / img.blockSize;
-            int rows = img.height / img.blockSize;
+            var rez = new Bitmap(img.width, img.height);
+            int cols = img.width/img.blockSize;
+            int rows = img.height/img.blockSize;
             int bcnt = img.zam.Length;
             int pi = 0;
             int pj = 0;
@@ -203,45 +215,40 @@ namespace img
                         for (int j = 0; j < img.blockSize; j++)
                             rez.SetPixel(i + pi, j + pj, img.BaseBlocks[img.zam[k]].GetPixel(i, j));
                 }
-                else
-                    if (img.pov[k] == 1)    //90
-                    {
-                        for (int i = 0; i < img.blockSize; i++)
-                            for (int j = 0; j < img.blockSize; j++)
-                                rez.SetPixel(i + pi, j + pj, img.BaseBlocks[img.zam[k]].GetPixel(img.blockSize - 1 - j, i));
-                    }
-                    else
-                        if (img.pov[k] == 2)    //180
-                        {
-                            for (int i = 0; i < img.blockSize; i++)
-                                for (int j = 0; j < img.blockSize; j++)
-                                    rez.SetPixel(i + pi, j + pj,
-                                        img.BaseBlocks[img.zam[k]].GetPixel(img.blockSize - 1 - i, img.blockSize - 1 - j));
-                        }
-                        else
-                            if (img.pov[k] == 3)    //270
-                            {
-                                for (int i = 0; i < img.blockSize; i++)
-                                    for (int j = 0; j < img.blockSize; j++)
-                                        rez.SetPixel(i + pi, j + pj,
-                                            img.BaseBlocks[img.zam[k]].GetPixel(j, img.blockSize - 1 - i));
-                            }
-                            else
-                                if (img.pov[k] == 4)    //зеркально по горизонтали
-                                {
-                                    for (int i = 0; i < img.blockSize; i++)
-                                        for (int j = 0; j < img.blockSize; j++)
-                                            rez.SetPixel(i + pi, j + pj,
-                                                img.BaseBlocks[img.zam[k]].GetPixel(i, img.blockSize - 1 - j));
-                                }
-                                else
-                                    if (img.pov[k] == 5)    //зеркально по горизонтали
-                                    {
-                                        for (int i = 0; i < img.blockSize; i++)
-                                            for (int j = 0; j < img.blockSize; j++)
-                                                rez.SetPixel(i + pi, j + pj,
-                                                    img.BaseBlocks[img.zam[k]].GetPixel(img.blockSize - 1 - i, j));
-                                    }
+                else if (img.pov[k] == 1) //90
+                {
+                    for (int i = 0; i < img.blockSize; i++)
+                        for (int j = 0; j < img.blockSize; j++)
+                            rez.SetPixel(i + pi, j + pj, img.BaseBlocks[img.zam[k]].GetPixel(img.blockSize - 1 - j, i));
+                }
+                else if (img.pov[k] == 2) //180
+                {
+                    for (int i = 0; i < img.blockSize; i++)
+                        for (int j = 0; j < img.blockSize; j++)
+                            rez.SetPixel(i + pi, j + pj,
+                                img.BaseBlocks[img.zam[k]].GetPixel(img.blockSize - 1 - i, img.blockSize - 1 - j));
+                }
+                else if (img.pov[k] == 3) //270
+                {
+                    for (int i = 0; i < img.blockSize; i++)
+                        for (int j = 0; j < img.blockSize; j++)
+                            rez.SetPixel(i + pi, j + pj,
+                                img.BaseBlocks[img.zam[k]].GetPixel(j, img.blockSize - 1 - i));
+                }
+                else if (img.pov[k] == 4) //зеркально по горизонтали
+                {
+                    for (int i = 0; i < img.blockSize; i++)
+                        for (int j = 0; j < img.blockSize; j++)
+                            rez.SetPixel(i + pi, j + pj,
+                                img.BaseBlocks[img.zam[k]].GetPixel(i, img.blockSize - 1 - j));
+                }
+                else if (img.pov[k] == 5) //зеркально по горизонтали
+                {
+                    for (int i = 0; i < img.blockSize; i++)
+                        for (int j = 0; j < img.blockSize; j++)
+                            rez.SetPixel(i + pi, j + pj,
+                                img.BaseBlocks[img.zam[k]].GetPixel(img.blockSize - 1 - i, j));
+                }
 
                 pi += img.blockSize;
                 if (pi >= img.width)
@@ -250,27 +257,10 @@ namespace img
                     pj += img.blockSize;
                 }
             }
-            Bitmap r = new Bitmap(img.rwidth, img.rheight);
+            var r = new Bitmap(img.rwidth, img.rheight);
             for (int i = 0; i < img.rwidth; i++)
                 for (int j = 0; j < img.rheight; j++) r.SetPixel(i, j, rez.GetPixel(i, j));
             return r;
-        }
-
-        public Image SetBMP
-        {
-            set
-            {
-                this.bmp = new Bitmap(value);
-                this.img = value;
-            }
-        }
-
-        public double SetAlfa
-        {
-            set
-            {
-                this.alfa = value;
-            }
         }
     }
 }
