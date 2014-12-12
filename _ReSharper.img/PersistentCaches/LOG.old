@@ -1,1 +1,5 @@
-2014/12/09-00:17:16.376 4e0 Delete type=3 #1
+2014/12/09-04:45:06.704 24fc Recovering log #3
+2014/12/09-04:45:06.720 24fc Level-0 table #5: started
+2014/12/09-04:45:06.814 24fc Level-0 table #5: 1259648 bytes OK
+2014/12/09-04:45:06.923 24fc Delete type=0 #3
+2014/12/09-04:45:06.923 24fc Delete type=3 #2

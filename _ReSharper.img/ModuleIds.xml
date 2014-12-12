@@ -6,7 +6,6 @@
   <Module PersistentId="8B47C010-66F9-4CFD-9489-2BFF415EDC39" ModuleId="MyFormula" />
   <Module PersistentId="0ECE0FC2-DEB3-4F20-A2B8-64D0302387E7" ModuleId="MiniMax" />
   <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, mvid=57f117d6-0f1d-4803-9943-f0373f947eea" ModuleId="mscorlib" />
-  <Module PersistentId="Cudafy.NET, Version=1.25.4963.10126, Culture=neutral, PublicKeyToken=63a4c9931616906b, mvid=0c4e245c-d970-4d13-99ee-eefc38fd5002" ModuleId="Cudafy.NET" />
   <Module PersistentId="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, mvid=f35b1905-eb31-499a-b1ec-0e884d17becf" ModuleId="System" />
   <Module PersistentId="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, mvid=86d72b42-fe14-44f7-9eeb-9412558864f3" ModuleId="System.Core" />
   <Module PersistentId="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, mvid=653765d5-687a-40ff-b1f4-2ec3ce1826e2" ModuleId="System.Drawing" />
@@ -108,8 +107,5 @@
   <Module PersistentId="DA82D8E1-AD54-4447-A6DE-318678E78A03" ModuleId="cudagaussfilter" />
   <Module PersistentId="C527E072-D397-40AE-A6BF-E740339CC230" ModuleId="cudamedianfilter" />
   <Module PersistentId="3ACC3437-2776-4044-AF79-81398FE41F65" ModuleId="cudaboxfilter" />
-  <Module PersistentId="MyLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=46a5129bc3f846e6, mvid=4990dc3a-35e5-4817-b35b-5d08d5c722e3" ModuleId="MyLibrary_1" />
-  <Module PersistentId="MyMath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null, mvid=987f120f-eec3-4c87-bb77-8b2d16f2cbfc" ModuleId="MyMath_1" />
-  <Module PersistentId="MiniMax, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null, mvid=48d9fee6-994a-4058-a9bc-9834be30eca0" ModuleId="MiniMax_1" />
   <Module PersistentId="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE" ModuleId="cudanonefilter" />
 </Modules>

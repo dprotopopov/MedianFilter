@@ -10,13 +10,10 @@
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MpiMedianFilter.cs" caret="272" fromTop="0" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudafyMedianFilter.cs" caret="876" fromTop="5" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:IFilter.cs" caret="249" fromTop="11" />
-    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:NoiseFilter.cs" caret="1819" fromTop="66" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaGaussFilter.cs" caret="1903" fromTop="20" />
-    <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaNoneFilter.cs" caret="1234" fromTop="6" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaBoxFilter.cs" caret="2041" fromTop="20" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:Exp.cs" caret="5265" fromTop="3" />
     <File id="3ACC3437-2776-4044-AF79-81398FE41F65/f:cudaboxfilter.cu" caret="3915" fromTop="0" />
-    <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="2848" fromTop="21" />
     <File id="3A16FBE3-A73B-4FF7-8E93-9581964557DC/f:mpimedianfilter.cpp" caret="1388" fromTop="15" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="10863" fromTop="92" />
   </RecentFiles>
