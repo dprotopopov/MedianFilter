@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://docs.gimp.org/ru/plug-in-erode.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>8.4. Эрозия</title>
+    <link rel="stylesheet" href="./8.4. Эрозия_files/gimp-help-plain.css" type="text/css">
+    <link rel="stylesheet" href="./8.4. Эрозия_files/gimp-help-screen.css" type="text/css">
+    <link rel="stylesheet" href="./8.4. Эрозия_files/gimp-help-custom.css" type="text/css">
+    <link rel="alternate stylesheet" href="./8.4. Эрозия_files/gimp22.css" type="text/css" title="gimp22">
+    <meta name="generator" content="DocBook XSL Stylesheets V1.77.1">
+    <link rel="home" href="http://docs.gimp.org/ru/index.html" title="GNU Image Manipulation Program">
+    <link rel="up" href="http://docs.gimp.org/ru/filters-generic.html" title="8. Общие фильтры">
+    <link rel="prev" href="http://docs.gimp.org/ru/plug-in-dilate.html" title="8.3. Разбавить">
+    <link rel="next" href="http://docs.gimp.org/ru/filters-combine.html" title="9. Фильтры объединения">
+  </head>
+  <body>
+    <div class="navheader">
+      <table width="100%" summary="Navigation header">
+        <tbody><tr>
+          <th colspan="3" align="center">8.4. Эрозия</th>
+        </tr>
+        <tr>
+          <td width="20%" align="left">
+            <a accesskey="p" href="http://docs.gimp.org/ru/plug-in-dilate.html">
+              <img src="./8.4. Эрозия_files/prev.png" alt="Пред.">
+            </a>
+          </td>
+          <th width="60%" align="center">8. Общие фильтры</th>
+          <td width="20%" align="right">&nbsp;<a accesskey="n" href="http://docs.gimp.org/ru/filters-combine.html"><img src="./8.4. Эрозия_files/next.png" alt="След."></a></td>
+        </tr>
+      </tbody></table>
+      <hr>
+      <div class="show_other_language">
+        <a href="http://docs.gimp.org/ca/plug-in-erode.html" title="Català">Català</a>
+        <a href="http://docs.gimp.org/da/plug-in-erode.html" title="Dansk">Dansk</a>
+        <a href="http://docs.gimp.org/de/plug-in-erode.html" title="Deutsch">Deutsch</a>
+        <a href="http://docs.gimp.org/el/plug-in-erode.html" title="Ελληνικά">Ελληνικά</a>
+        <a href="http://docs.gimp.org/en/plug-in-erode.html" title="English">English</a>
+        <a href="http://docs.gimp.org/en_GB/plug-in-erode.html" title="British">British</a>
+        <a href="http://docs.gimp.org/es/plug-in-erode.html" title="Español">Español</a>
+        <a href="http://docs.gimp.org/fr/plug-in-erode.html" title="Français">Français</a>
+        <a href="http://docs.gimp.org/it/plug-in-erode.html" title="Italiano">Italiano</a>
+        <a href="http://docs.gimp.org/ja/plug-in-erode.html" title="日本語(Japanese)">日本語(Japanese)</a>
+        <a href="http://docs.gimp.org/ko/plug-in-erode.html" title="한국어(Korean)">한국어(Korean)</a>
+        <a href="http://docs.gimp.org/nl/plug-in-erode.html" title="Nederlands">Nederlands</a>
+        <a href="http://docs.gimp.org/nn/plug-in-erode.html" title="Norwegian">Norwegian</a>
+        <a href="http://docs.gimp.org/pt_BR/plug-in-erode.html" title="Português">Português</a>
+        <a href="./8.4. Эрозия_files/8.4. Эрозия.html" title="Pусский">Pусский</a>
+        <a href="http://docs.gimp.org/zh_CN/plug-in-erode.html" title="中文">中文</a>
+      </div>
+    </div>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-erode"></a>8.4. Эрозия</h3>
+          </div>
+        </div>
+      </div>
+      <a id="idp8130464" class="indexterm"></a>
+      <a id="idp29369408" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="idp28712336"></a>8.4.1. Общая информация</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="idp30826752"></a>
+          <p class="title">
+            <strong>Рисунок 17.159. Эрозия шума</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="./8.4. Эрозия_files/taj_orig.jpg" alt="Эрозия шума">
+              <div class="caption">
+                <p>Исходное изображение</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="./8.4. Эрозия_files/generic-taj-erode.jpg" alt="Эрозия шума">
+              <div class="caption">
+                <p>После применения фильтра <span class="quote">«<span class="quote">Эрозия шума</span>»</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break">
+        <p>Этот фильтр расширяет и усиливает светлые места текущего слоя или выделения.</p>
+        <p>Для каждого пикселя изображения, его значение (яркость) становится наибольшим из восьми окружающих пикселей (матрица 3x3). Так, светлый пиксель добавится к светлым областям. Отдельный пиксель на тёмном фоне станет квадратом 3x3, и это добавит шума к изображению. Светлая область расширится во все направления на один пиксель.</p>
+        <p>На более сложных изображениях, светлые области расширяются, усиливаются и в то же время становятся более зернистыми.</p>
+        <p>На сплошном фоне этот фильтр может удалить шум: </p>
+        <div class="figure">
+          <a id="idp34974160"></a>
+          <p class="title">
+            <strong>Рисунок 17.160. Пример применения фильтра <span class="quote">«<span class="quote">Эрозия</span>»</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="./8.4. Эрозия_files/erode-noise.png" alt="Пример применения фильтра Эрозия">
+            </div>
+          </div>
+        </div>
+        <p>
+          <br class="figure-break">
+        </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="idp21199776"></a>8.4.2. Активация фильтра</h4>
+            </div>
+          </div>
+        </div>
+        <p>Этот фильтр находится в меню изображения <span class="guimenu">Фильтры</span> → <span class="guisubmenu">Общие</span> → <span class="guimenuitem">Разбавить</span>.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr>
+      <table width="100%" summary="Navigation footer">
+        <tbody><tr>
+          <td width="40%" align="left"><a accesskey="p" href="http://docs.gimp.org/ru/plug-in-dilate.html"><img src="./8.4. Эрозия_files/prev.png" alt="Пред."></a>&nbsp;</td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="http://docs.gimp.org/ru/filters-generic.html">
+              <img src="./8.4. Эрозия_files/up.png" alt="Наверх">
+            </a>
+          </td>
+          <td width="40%" align="right">&nbsp;<a accesskey="n" href="http://docs.gimp.org/ru/filters-combine.html"><img src="./8.4. Эрозия_files/next.png" alt="След."></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="http://docs.gimp.org/ru/plug-in-dilate.html">8.3. Разбавить</a>&nbsp;</td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="http://docs.gimp.org/ru/index.html">
+              <img src="./8.4. Эрозия_files/home.png" alt="Начало">
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top">&nbsp;<a accesskey="n" href="http://docs.gimp.org/ru/filters-combine.html">9. Фильтры объединения</a></td>
+        </tr>
+      </tbody></table>
+      <a href="https://bugzilla.gnome.org/enter_bug.cgi?product=GIMP-manual" class="reportbug">
+      Report an error in Bugzilla
+    </a>
+    </div>
+  
+
+</body></html>

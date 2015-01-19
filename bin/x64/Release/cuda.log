@@ -341,3 +341,1004 @@ Step :	3
 Size :	400 267
 Input file name :	R:\Temp\3c802e5c-4a21-4311-b871-24df6825f6dd.bin
 Output file name :	R:\Temp\45205d19-79fd-4562-b54f-a472dbc3ea47.bin
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	none
+Input file name :	R:\Temp\0897c44b-f61d-411b-8729-24b546bd82e4.bmp
+Output file name :	R:\Temp\e986e59d-3ec0-4923-8b43-715fb7680fc0.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\4225c101-08f6-4149-a91a-5cd7215016c7.bmp
+Output file name :	R:\Temp\6d868c30-a067-4017-acbc-f1b304160b3b.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	none
+Input file name :	R:\Temp\68b1b58d-97bc-46ed-8a8d-5ebb1886d900.bmp
+Output file name :	R:\Temp\fee4e83c-8541-4daf-8f0d-c459229611ce.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\8eea17fc-5241-4d29-8b9e-e0b96435f3d4.bmp
+Output file name :	R:\Temp\d65f2a94-bb7c-4eb5-83bd-e58a9c8c7841.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\138520fb-b5fc-464e-9072-d221801f1452.bmp
+Output file name :	R:\Temp\d8a1347b-4e86-4d57-87b1-62e5858f011b.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\7b34e8f7-731e-453a-b0e7-635876013e32.bmp
+Output file name :	R:\Temp\19ba776e-7117-4593-9016-36a66834cadf.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\debdc655-b688-4318-9af4-98eebe35a1d2.bmp
+Output file name :	R:\Temp\e96aac3f-9571-4a92-a0ef-2add70fec045.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\20f4dc88-dbe2-4908-8023-92a650fff970.bmp
+Output file name :	R:\Temp\d8d31811-5c45-4099-9b1a-5c58896b36fa.bmp
+BMP image size :	100 x 100
+BMP file size :	40054
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per line :	400
+Output file size :	40054
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\ba6e656a-84cd-4f26-9149-087eab91f043.bmp
+Output file name :	R:\Temp\e84adf2c-d02a-4d22-abe4-752eed184110.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	none
+Input file name :	R:\Temp\ab89f381-83e7-4892-838f-ef477037072d.bmp
+Output file name :	R:\Temp\0b4162f6-59d2-4f80-820d-17ee4f770b1e.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\13fcf94f-79a5-42bd-8bc0-75c7fb78e0d6.bin
+Output file name :	R:\Temp\cb7c4031-3088-4edb-9263-7261d59ad09b.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Input file name :	400
+Output file name :	267
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\f37c753e-c86b-44c8-8a7c-b76147b85bf8.bmp
+Output file name :	R:\Temp\80899120-9cb2-450b-9b99-aa83c22c202e.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Input file name :	400
+Output file name :	267
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	none
+Input file name :	R:\Temp\aa30486a-426e-499e-9f6a-cfb93f757d91.bmp
+Output file name :	R:\Temp\0d4dd480-afb8-40aa-ace2-1f1b204f87c6.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\c8bf2d58-89d4-499b-b5d4-104919142924.bmp
+Output file name :	R:\Temp\2afff9ff-ea95-4287-9d5a-a90d7d0d6185.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\e885fe57-3c5b-4f80-9f20-569d02f6b437.bmp
+Output file name :	R:\Temp\eefbc83b-ff74-401d-8e73-794637b3edf8.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	none
+Input file name :	R:\Temp\76648286-78e7-4329-bde0-76e74e2cd69c.bmp
+Output file name :	R:\Temp\7f8db2a2-8de1-49f8-9902-f64a7e841823.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\cec042a4-8177-434e-a801-68adc93d609f.bmp
+Output file name :	R:\Temp\98fc32fe-ce9c-44c2-85ac-8a4db4c2cb8f.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\6564f26d-4c72-4582-b634-22d6611d43f8.bmp
+Output file name :	R:\Temp\b7ed4d9c-6a91-447e-bff5-5f48c061a0a5.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\abee1409-a9ec-4838-8bd5-5aa724923273.bmp
+Output file name :	R:\Temp\4d84b12e-3cb4-4f1e-b080-f3708aa80dff.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\0d351d90-f23f-49ca-a3d2-eecb627b4236.bmp
+Output file name :	R:\Temp\bb50950d-b8c6-4b6b-afde-f2c804c6159e.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\19952d88-5bf3-4f02-8f95-725e639b270a.bmp
+Output file name :	R:\Temp\46003687-ff11-47b3-b64b-6daf34ccfa6d.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\d83d1fdf-a580-402e-9e02-37d6df7efcd4.bmp
+Output file name :	R:\Temp\16a68abd-40ee-4b1b-9b33-1d6b83c869f2.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\51842592-7c57-4330-b9af-146e9b2dd316.bmp
+Output file name :	R:\Temp\50218a2a-8730-48b8-b7d6-4cc758fe69eb.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\799f093e-fd00-48fb-8b79-b88728a0a992.bmp
+Output file name :	R:\Temp\03637300-50e8-4978-b3dc-0259b1228832.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\357b3997-4d8c-48dd-9804-519bf9ca664a.bmp
+Output file name :	R:\Temp\f3bde7cf-4df8-4dd3-8cf8-7e3b69dd958e.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\461cbee7-f4ca-454f-941c-87b8b0382721.bmp
+Output file name :	R:\Temp\100b6604-1d4a-4d21-8940-c9dd64e4fdca.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\19a10dd0-b850-4613-8414-bdff812867ef.bmp
+Output file name :	R:\Temp\3d204ccf-56de-42ec-bfcf-6ea07eac0a49.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\ee328235-54eb-4bb7-9926-93e5c1d0fe8b.bmp
+Output file name :	R:\Temp\cd5065ae-4dfb-4efc-bba4-209f13532150.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\6161295a-b8a2-4510-8a84-c27b55197a41.bmp
+Output file name :	R:\Temp\84a29ace-9a5a-4997-bce2-12ba81deb799.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\c2f6d1d8-1046-4f43-94a6-a7ad719b3a51.bmp
+Output file name :	R:\Temp\172bd4a9-4036-42ee-b5c2-f500dd529a5f.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\cf9320d3-1520-469f-99a2-e3d3c7615d15.bmp
+Output file name :	R:\Temp\36f7efdb-69de-4221-b7bd-7bc394edfff3.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\e0c4f14d-ac2e-413f-b7e4-e5cca8b0569e.bmp
+Output file name :	R:\Temp\6d1c5bd1-9acf-4230-bcbe-83914f17f643.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\426f525d-0f1a-4e73-9c0a-2c0991773f3e.bmp
+Output file name :	R:\Temp\2b9cb5d1-e6bb-4a86-accc-d056e9cff958.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\38af4724-ab06-410d-99d7-53120754b566.bmp
+Output file name :	R:\Temp\6c91bbe2-2101-4641-93f7-42bbd6c12112.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\724c75cb-488f-4e42-86f8-746788623fdd.bmp
+Output file name :	R:\Temp\775e7e7c-d302-4831-80d6-3875f1f6144d.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\31b37b30-8042-4cc1-8f86-a7ed7e6b6985.bmp
+Output file name :	R:\Temp\ca1fe611-f96b-4fa5-a1c3-429d25098752.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\9a88eea3-77b3-47f7-b17f-a2b928b9fb40.bmp
+Output file name :	R:\Temp\292d247c-8cad-434a-8568-7a62c565e853.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\4dd6921a-f79d-4a4e-b4b9-11549964c327.bmp
+Output file name :	R:\Temp\7e308168-5645-41cc-8bc4-5fac033688c7.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\06831e9b-8cd4-4823-817c-1ddb94d6820f.bmp
+Output file name :	R:\Temp\7fe8c03c-9051-4cd9-852f-0c28b3ad05c5.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\151efc4b-e2ee-4c71-a4be-856ed2a310b9.bmp
+Output file name :	R:\Temp\b77d0698-ef94-41f9-86e3-f19e2f577dba.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\4023785e-5a90-4e3d-ac3a-c02a8ff83d77.bmp
+Output file name :	R:\Temp\a0a341ec-b787-49d9-afa9-c2bc7b037b58.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\d098ce69-61d1-4134-849d-484bd205d416.bmp
+Output file name :	R:\Temp\6249a62e-6a3e-4eb9-83aa-2bf996572f81.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\e67b78a4-9c32-4910-ae9d-9fe9d68b9d66.bmp
+Output file name :	R:\Temp\dfd49a4a-7b72-4ed6-952b-c03a387a5501.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\55e822d5-cf75-4684-acf2-4cc82c5b9ff5.bin
+Output file name :	R:\Temp\ec2830bc-a2a3-49e6-a03e-9e5d5f76743c.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\ceeccb07-ba6b-417c-b5ec-cc81f04466c5.bin
+Output file name :	R:\Temp\4420d373-b0d3-409e-a342-d0c132094f4d.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\0a9679ee-8a64-433e-88bc-1a2d2bce5a15.bin
+Output file name :	R:\Temp\955bc8a4-65dd-4546-a0e6-9a84a00d8d8a.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\8d5c6c8c-fc60-496c-a2d1-c3d11886eae5.bin
+Output file name :	R:\Temp\d21cdd90-44c2-4d50-b28e-53e2f16e5cf2.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\822c0578-5715-4935-807e-c1e6b9834ded.bin
+Output file name :	R:\Temp\b52d769a-c645-4fc0-b8f9-960adb7bd951.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Input file name :	400
+Output file name :	267
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\ce89f759-adba-47ad-a42f-7d4d4263441d.bmp
+Output file name :	R:\Temp\a2aacd69-aee9-4988-9697-62b796efe141.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\6a8c69df-59f3-4e69-a2aa-37e5cb20c725.bmp
+Output file name :	R:\Temp\f95f2a02-44d1-42f6-9f1f-4809debc9bd3.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\88364799-3d1b-481b-86a6-e890ebf5b8bf.bin
+Output file name :	R:\Temp\ce5e9dcc-1fc9-4c51-8789-c9982973ea97.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\f74087f0-ccde-4479-be02-88cf4e681c1d.bin
+Output file name :	R:\Temp\a8fce942-27d1-4094-8c2d-0d01ae3e28d8.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\69209806-878a-42ca-9aeb-00a56ecbac97.bin
+Output file name :	R:\Temp\adfce781-1310-4a9e-b007-699d84179bec.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\cba81a32-81a2-47bd-8907-42caa2dd4675.bin
+Output file name :	R:\Temp\6a98a04c-eca7-442b-ae92-9ea0654ee730.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\374cd0eb-334a-48c5-b726-b4e08351141a.bin
+Output file name :	R:\Temp\dc739f7f-5de8-4494-be19-ade67733ba9f.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\dd7f42da-282b-4a5d-b8d4-1effeb9e7eab.bin
+Output file name :	R:\Temp\08835d45-47df-42d4-a27d-52496ef5e455.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\304dcf22-d166-43be-8769-35e3400967da.bin
+Output file name :	R:\Temp\9fdf09dd-e0f4-4c5e-b3b0-622b1345efc3.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\c80f7190-e970-4196-af00-d38b114873f4.bin
+Output file name :	R:\Temp\63cb0b3b-163e-4371-abe1-bead402c9e6c.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\16cab8df-c5c9-4d61-a821-087794e0362f.bin
+Output file name :	R:\Temp\1ec9280f-c351-495a-9eb5-424ec607b69d.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Output file size :	427254
+Median Filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Median Filter
+Description :	Median Filter
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\939af33a-b55d-48a6-a47f-20a17501bf54.bmp
+Output file name :	R:\Temp\7b5cd4c5-a9f3-426c-b1eb-f3e799512454.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	1.290000e-001
+Output file size :	427254
+box filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	box filtering
+Description :	box filtering
+Filter :	box
+Input file name :	400
+Output file name :	267
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	gauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\0788b215-dd09-40d6-9847-3171f0bd06dd.bin
+Output file name :	R:\Temp\70875529-0de6-4193-b927-76bfc4d9033a.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	1.770000e-001
+Output file size :	427254
+gauss filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	gauss filtering
+Description :	gauss filtering
+Filter :	recirsivegauss
+Sigma :	3.000000e+000
+Input file name :	R:\Temp\8b687a2f-3c8c-41fa-8b4b-da345ad296bb.bin
+Output file name :	R:\Temp\c0ca5e63-3cf9-438e-8e22-f68203a0e0ab.bin
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	7.330000e-001
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\7a8151d3-7b03-4d68-a8bd-0c3db21916c7.bmp
+Output file name :	R:\Temp\b2556ad5-3cff-4c36-9d00-2587c1a6fd8c.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	1.380000e-001
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\14f804b8-4728-4013-b483-4800db3a004e.bmp
+Output file name :	R:\Temp\8a7ff58c-a991-4118-8f06-68aa32b1e262.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	6.600000e-002
+Output file size :	427254
+none filtering
+Running on GPU 0 (GeForce GTX 650)
+Title :	none filtering
+Description :	none filtering
+Filter :	none
+Input file name :	R:\Temp\b85c45e8-f38a-4718-9e03-d152b3016051.bmp
+Output file name :	R:\Temp\798a274f-82ba-434c-a6ba-3bd53287e79a.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	1.030000e-001
+Output file size :	427254

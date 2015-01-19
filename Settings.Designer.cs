@@ -59,6 +59,8 @@
             this.radioButtonNativeEngine = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDownGauss = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numericUpDownErosionDilation = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoise)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMedian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSCI)).BeginInit();
@@ -70,12 +72,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVideoMemorySize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGauss)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownErosionDilation)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(574, 492);
+            this.button1.Location = new System.Drawing.Point(584, 570);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 35);
@@ -85,7 +88,7 @@
             // 
             // numericUpDownNoise
             // 
-            this.numericUpDownNoise.Location = new System.Drawing.Point(430, 59);
+            this.numericUpDownNoise.Location = new System.Drawing.Point(538, 79);
             this.numericUpDownNoise.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownNoise.Maximum = new decimal(new int[] {
             50,
@@ -98,7 +101,7 @@
             // 
             // numericUpDownMedian
             // 
-            this.numericUpDownMedian.Location = new System.Drawing.Point(430, 131);
+            this.numericUpDownMedian.Location = new System.Drawing.Point(538, 151);
             this.numericUpDownMedian.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownMedian.Maximum = new decimal(new int[] {
             15,
@@ -111,7 +114,7 @@
             // 
             // numericUpDownSCI
             // 
-            this.numericUpDownSCI.Location = new System.Drawing.Point(429, 95);
+            this.numericUpDownSCI.Location = new System.Drawing.Point(537, 115);
             this.numericUpDownSCI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownSCI.Name = "numericUpDownSCI";
             this.numericUpDownSCI.Size = new System.Drawing.Size(180, 26);
@@ -120,7 +123,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 61);
+            this.label1.Location = new System.Drawing.Point(403, 81);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 20);
@@ -130,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 133);
+            this.label2.Location = new System.Drawing.Point(232, 153);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(297, 20);
@@ -140,7 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 97);
+            this.label3.Location = new System.Drawing.Point(380, 117);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 20);
@@ -170,7 +173,7 @@
             this.groupBox1.Controls.Add(this.radioButtonMpiEngine);
             this.groupBox1.Controls.Add(this.radioButtonCudafyEngine);
             this.groupBox1.Controls.Add(this.radioButtonNativeEngine);
-            this.groupBox1.Location = new System.Drawing.Point(93, 214);
+            this.groupBox1.Location = new System.Drawing.Point(82, 285);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -472,7 +475,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(218, 170);
+            this.label10.Location = new System.Drawing.Point(326, 190);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(201, 20);
@@ -482,7 +485,7 @@
             // numericUpDownGauss
             // 
             this.numericUpDownGauss.DecimalPlaces = 6;
-            this.numericUpDownGauss.Location = new System.Drawing.Point(430, 168);
+            this.numericUpDownGauss.Location = new System.Drawing.Point(538, 188);
             this.numericUpDownGauss.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownGauss.Maximum = new decimal(new int[] {
             15,
@@ -498,6 +501,36 @@
             0,
             0});
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(123, 225);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(402, 20);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Квадрат радиуса в фильтрах эррозии/расшарения:";
+            // 
+            // numericUpDownErosionDilation
+            // 
+            this.numericUpDownErosionDilation.DecimalPlaces = 6;
+            this.numericUpDownErosionDilation.Location = new System.Drawing.Point(538, 224);
+            this.numericUpDownErosionDilation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numericUpDownErosionDilation.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numericUpDownErosionDilation.Name = "numericUpDownErosionDilation";
+            this.numericUpDownErosionDilation.Size = new System.Drawing.Size(180, 26);
+            this.numericUpDownErosionDilation.TabIndex = 9;
+            this.numericUpDownErosionDilation.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownErosionDilation.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // Settings
             // 
             this.AcceptButton = this.button1;
@@ -505,6 +538,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(901, 664);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.numericUpDownErosionDilation);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.numericUpDownGauss);
             this.Controls.Add(this.groupBox1);
@@ -536,6 +571,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVideoMemorySize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGauss)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownErosionDilation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,5 +610,7 @@
         private System.Windows.Forms.RadioButton radioButtonCudaEngine;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numericUpDownGauss;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown numericUpDownErosionDilation;
     }
 }

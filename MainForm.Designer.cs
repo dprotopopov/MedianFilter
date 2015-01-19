@@ -62,6 +62,10 @@
             this.mmedian = new System.Windows.Forms.ToolStripMenuItem();
             this.boxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gaussToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.erosionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dilationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.экспериментToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.запускToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mconvert = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +76,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.просмотрСправкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recursiveGaussToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -351,7 +355,7 @@
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
             this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // фильтрToolStripMenuItem
             // 
@@ -359,6 +363,10 @@
             this.mmedian,
             this.boxToolStripMenuItem,
             this.gaussToolStripMenuItem,
+            this.recursiveGaussToolStripMenuItem,
+            this.erosionToolStripMenuItem,
+            this.dilationToolStripMenuItem,
+            this.toolStripSeparator5,
             this.noneToolStripMenuItem});
             this.фильтрToolStripMenuItem.Name = "фильтрToolStripMenuItem";
             this.фильтрToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
@@ -385,6 +393,32 @@
             this.gaussToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
             this.gaussToolStripMenuItem.Text = "Gauss";
             this.gaussToolStripMenuItem.Click += new System.EventHandler(this.mgauss_Click);
+            // 
+            // erosionToolStripMenuItem
+            // 
+            this.erosionToolStripMenuItem.Name = "erosionToolStripMenuItem";
+            this.erosionToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.erosionToolStripMenuItem.Text = "Erosion";
+            this.erosionToolStripMenuItem.Click += new System.EventHandler(this.merosion_Click);
+            // 
+            // dilationToolStripMenuItem
+            // 
+            this.dilationToolStripMenuItem.Name = "dilationToolStripMenuItem";
+            this.dilationToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.dilationToolStripMenuItem.Text = "Dilation";
+            this.dilationToolStripMenuItem.Click += new System.EventHandler(this.mdilation_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(275, 6);
+            // 
+            // noneToolStripMenuItem
+            // 
+            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+            this.noneToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.noneToolStripMenuItem.Text = "None";
+            this.noneToolStripMenuItem.Click += new System.EventHandler(this.mnone_Click);
             // 
             // экспериментToolStripMenuItem
             // 
@@ -459,12 +493,12 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // noneToolStripMenuItem
+            // recursiveGaussToolStripMenuItem
             // 
-            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            this.noneToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
-            this.noneToolStripMenuItem.Text = "None";
-            this.noneToolStripMenuItem.Click += new System.EventHandler(this.mnone_Click);
+            this.recursiveGaussToolStripMenuItem.Name = "recursiveGaussToolStripMenuItem";
+            this.recursiveGaussToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.recursiveGaussToolStripMenuItem.Text = "Recursive Gauss";
+            this.recursiveGaussToolStripMenuItem.Click += new System.EventHandler(this.mrecursiveGauss_Click);
             // 
             // MainForm
             // 
@@ -543,6 +577,10 @@
         private System.Windows.Forms.ToolStripMenuItem boxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem erosionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dilationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem recursiveGaussToolStripMenuItem;
     }
 }
 

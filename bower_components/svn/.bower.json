@@ -1,0 +1,13 @@
+{
+  "name": "svn",
+  "_release": "*",
+  "_resolution": {
+    "type": "branch",
+    "branch": "trunk",
+    "commit": "*"
+  },
+  "_source": "http://libbmp.googlecode.com/svn",
+  "_target": "*",
+  "_originalSource": "svn+http://libbmp.googlecode.com/svn/",
+  "_direct": true
+}

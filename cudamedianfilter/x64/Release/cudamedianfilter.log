@@ -1,7 +1,7 @@
-﻿Построение начато 09.12.2014 9:04:50.
+﻿Построение начато 19.01.2015 19:30:47.
      1>Проект "D:\Projects\MedianFilter\cudamedianfilter\cudamedianfilter.vcxproj" в узле 2 (целевые объекты Rebuild).
      1>CudaClean:
-         cmd.exe /C "R:\Temp\tmpe8918f23ed0a4b6a8f3ec4681ff78bf2.cmd"
+         cmd.exe /C "R:\Temp\tmpe0dcae7b42264a47952bf71cd85ef149.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile      -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o x64\Release\cudamedianfilter.cu.obj "D:\Projects\MedianFilter\cudamedianfilter\cudamedianfilter.cu" -clean
          
          D:\Projects\MedianFilter\cudamedianfilter>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile      -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o x64\Release\cudamedianfilter.cu.obj "D:\Projects\MedianFilter\cudamedianfilter\cudamedianfilter.cu" -clean 
@@ -9,7 +9,7 @@
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DNDEBUG /D_CONSOLE /D_LIB /D_UNICODE /DUNICODE /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" /I. /FIcuda_runtime.h /c D:\Projects\MedianFilter\cudamedianfilter\cudamedianfilter.cu 
        CudaBuild:
          Compiling CUDA source file cudamedianfilter.cu...
-         cmd.exe /C "R:\Temp\tmp9977a4a0a58942d09b54d6994438489f.cmd"
+         cmd.exe /C "R:\Temp\tmpc973533a42e94bb7a0b8da0cd8ff882f.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o x64\Release\cudamedianfilter.cu.obj "D:\Projects\MedianFilter\cudamedianfilter\cudamedianfilter.cu"
          
          D:\Projects\MedianFilter\cudamedianfilter>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DNDEBUG -D_CONSOLE -D_LIB -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD  " -o x64\Release\cudamedianfilter.cu.obj "D:\Projects\MedianFilter\cudamedianfilter\cudamedianfilter.cu" 
@@ -21,4 +21,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:10.20
+Затраченное время: 00:00:08.78

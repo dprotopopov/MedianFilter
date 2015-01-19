@@ -173,7 +173,7 @@ namespace img
             }
         }
 
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -336,7 +336,7 @@ namespace img
             {
                 DateTime dateTime = DateTime.Now;
                 TabPage tabPage = tabControl1.SelectedTab;
-                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                var imagePanel = (ImagePanel)((SplitContainer)tabPage.Controls[0]).Panel1.Controls[0];
                 IFilter filter = null;
                 if (_settings.IsCudaEngine)
                 {
@@ -346,10 +346,70 @@ namespace img
                         _settings.Gauss);
                 }
                 if (filter == null) return;
-                
+
                 Cursor = Cursors.AppStarting;
                 filter.Filter();
-                var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                var pb2 = (ImagePanel)((SplitContainer)tabPage.Controls[0]).Panel2.Controls[0];
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
+
+                #region params
+
+                if (tabPage.Tag.ToString() == ".sci")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
+                    imagePanel.Tag = ".sci";
+                    pb2.Tag = ".sci";
+                }
+
+                if (tabPage.Tag.ToString() == ".bmp")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
+                    imagePanel.Tag = ".bmp";
+                    pb2.Tag = ".bmp";
+                }
+
+                pb2.Image = filter.GetNewBmp;
+                OpenLogic(tabPage);
+
+                left.Enabled = true;
+                right.Enabled = true;
+                imagePanel.Zoom = 1;
+                pb2.Zoom = 1;
+
+                #endregion
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, exc.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void recursiveGauss_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel)((SplitContainer)tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaRecursiveGaussFilter(new Bitmap(imagePanel.Image),
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize,
+                        _settings.Gauss);
+                }
+                if (filter == null) return;
+
+                Cursor = Cursors.AppStarting;
+                filter.Filter();
+                var pb2 = (ImagePanel)((SplitContainer)tabPage.Controls[0]).Panel2.Controls[0];
                 TimeSpan timeSpan = DateTime.Now - dateTime;
                 MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
 
@@ -402,6 +462,128 @@ namespace img
                 if (_settings.IsCudaEngine)
                 {
                     filter = new CudaNoneFilter(new Bitmap(imagePanel.Image),
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize);
+                }
+                if (filter == null) return;
+
+                Cursor = Cursors.AppStarting;
+                filter.Filter();
+                var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
+
+                #region params
+
+                if (tabPage.Tag.ToString() == ".sci")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
+                    imagePanel.Tag = ".sci";
+                    pb2.Tag = ".sci";
+                }
+
+                if (tabPage.Tag.ToString() == ".bmp")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
+                    imagePanel.Tag = ".bmp";
+                    pb2.Tag = ".bmp";
+                }
+
+                pb2.Image = filter.GetNewBmp;
+                OpenLogic(tabPage);
+
+                left.Enabled = true;
+                right.Enabled = true;
+                imagePanel.Zoom = 1;
+                pb2.Zoom = 1;
+
+                #endregion
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, exc.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dilation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaDilationFilter(new Bitmap(imagePanel.Image),
+                        _settings.ErosionDilation,
+                        _settings.CudaGridSize,
+                        _settings.CudaBlockSize);
+                }
+                if (filter == null) return;
+
+                Cursor = Cursors.AppStarting;
+                filter.Filter();
+                var pb2 = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel2.Controls[0];
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                MessageBox.Show(string.Format("Время фильтрации: {0}\n", timeSpan));
+
+                #region params
+
+                if (tabPage.Tag.ToString() == ".sci")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения SCI");
+                    _t2.SetToolTip(pb2, "Формат изображения SCI");
+                    imagePanel.Tag = ".sci";
+                    pb2.Tag = ".sci";
+                }
+
+                if (tabPage.Tag.ToString() == ".bmp")
+                {
+                    _t1.SetToolTip(imagePanel, "Формат изображения BMP");
+                    _t2.SetToolTip(pb2, "Формат изображения BMP");
+                    imagePanel.Tag = ".bmp";
+                    pb2.Tag = ".bmp";
+                }
+
+                pb2.Image = filter.GetNewBmp;
+                OpenLogic(tabPage);
+
+                left.Enabled = true;
+                right.Enabled = true;
+                imagePanel.Zoom = 1;
+                pb2.Zoom = 1;
+
+                #endregion
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, exc.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void erosion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                TabPage tabPage = tabControl1.SelectedTab;
+                var imagePanel = (ImagePanel) ((SplitContainer) tabPage.Controls[0]).Panel1.Controls[0];
+                IFilter filter = null;
+                if (_settings.IsCudaEngine)
+                {
+                    filter = new CudaErosionFilter(new Bitmap(imagePanel.Image),
+                        _settings.ErosionDilation,
                         _settings.CudaGridSize,
                         _settings.CudaBlockSize);
                 }
@@ -771,6 +953,11 @@ namespace img
             gauss_Click(sender, e);
         }
 
+        private void mrecursiveGauss_Click(object sender, EventArgs e)
+        {
+            recursiveGauss_Click(sender, e);
+        }
+
         private void mnone_Click(object sender, EventArgs e)
         {
             none_Click(sender, e);
@@ -779,6 +966,16 @@ namespace img
         private void mconvert_Click(object sender, EventArgs e)
         {
             convert_Click(sender, e);
+        }
+
+        private void merosion_Click(object sender, EventArgs e)
+        {
+            erosion_Click(sender, e);
+        }
+
+        private void mdilation_Click(object sender, EventArgs e)
+        {
+            dilation_Click(sender, e);
         }
 
         private void mnoise_Click(object sender, EventArgs e)
@@ -849,5 +1046,6 @@ namespace img
             var ab = new About();
             ab.ShowDialog();
         }
+
     }
 }

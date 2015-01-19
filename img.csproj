@@ -79,10 +79,13 @@
     </Compile>
     <Compile Include="Convertor.cs" />
     <Compile Include="CudaBoxFilter.cs" />
+    <Compile Include="CudaDilationFilter.cs" />
+    <Compile Include="CudaErosionFilter.cs" />
     <Compile Include="CudafyMedianFilter.cs" />
     <Compile Include="CudaGaussFilter.cs" />
     <Compile Include="CudaMedianFilter.cs" />
     <Compile Include="CudaNoneFilter.cs" />
+    <Compile Include="CudaRecursiveGaussFilter.cs" />
     <Compile Include="Exp.cs">
       <SubType>Form</SubType>
     </Compile>

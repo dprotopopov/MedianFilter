@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cudaboxfilter", "cudaboxfil
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cudanonefilter", "cudanonefilter\cudanonefilter.vcxproj", "{A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cudaerosiondilationfilter", "cudaerosiondilationfilter\cudaerosiondilationfilter.vcxproj", "{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +257,24 @@ Global
 		{A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE}.Release|x64.Build.0 = Release|x64
 		{A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE}.Release|x86.ActiveCfg = Release|Win32
 		{A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE}.Release|x86.Build.0 = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|Win32.Build.0 = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|x64.ActiveCfg = Debug|x64
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|x64.Build.0 = Debug|x64
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|x86.ActiveCfg = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Debug|x86.Build.0 = Debug|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|Any CPU.ActiveCfg = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|Win32.ActiveCfg = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|Win32.Build.0 = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|x64.ActiveCfg = Release|x64
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|x64.Build.0 = Release|x64
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|x86.ActiveCfg = Release|Win32
+		{0B13B0FE-DA75-4FB8-A0F6-E58C81292722}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

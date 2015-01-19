@@ -108,4 +108,5 @@
   <Module PersistentId="C527E072-D397-40AE-A6BF-E740339CC230" ModuleId="cudamedianfilter" />
   <Module PersistentId="3ACC3437-2776-4044-AF79-81398FE41F65" ModuleId="cudaboxfilter" />
   <Module PersistentId="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE" ModuleId="cudanonefilter" />
+  <Module PersistentId="0B13B0FE-DA75-4FB8-A0F6-E58C81292722" ModuleId="cudaerosiondilationfilter" />
 </Modules>

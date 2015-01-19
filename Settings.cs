@@ -33,6 +33,12 @@ namespace img
             set { numericUpDownGauss.Value = (decimal) value; }
         }
 
+        public double ErosionDilation
+        {
+            get { return (double) numericUpDownErosionDilation.Value; }
+            set { numericUpDownErosionDilation.Value = (decimal) value; }
+        }
+
         public int SCI
         {
             get { return (int) numericUpDownSCI.Value; }
@@ -128,7 +134,7 @@ namespace img
         {
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
         }
     }

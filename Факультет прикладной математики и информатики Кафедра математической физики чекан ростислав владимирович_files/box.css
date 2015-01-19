@@ -1,0 +1,93 @@
+.saite{font-weight:900; font-size:18px; color:#0066FF;}
+.price{padding-left:5px; font-weight:900; font-size:18px; color:#006600;}
+.banner1{font-weight:700; font-size:16px; color:#ffffff;}
+.banner2{padding-left:5px; font-weight:900; font-size:18px; color:#000000;}
+
+a.podrobnee{font-weight:900; font-size:18px; color:#FF0000;}
+a.podrobnee:hover{text-decoration:underline; font-weight:900; font-size:18px; color:#0066FF;}
+
+
+a.podrobnee2{font-weight:900; font-size:18px; color:#0066FF;}
+a.podrobnee2:hover{text-decoration:underline; font-weight:900; font-size:18px; color:#FF0000;}8px; color:#000000;}
+
+.n3{cursor:pointer;color:#0066CC;}
+.n3:hover{color:#990000;}
+.shpr{background-color:#CCC;visibility:hidden;width:80%;height:340px; display:none;}
+.shprt{width:95%;height:300px;}
+.ap{position: absolute;width: 32px;height: 32px;margin-top:0px;background: url(/i/cb.png) no-repeat;overflow: hidden;}
+.g2{margin-left:32px;background-position:-32px 0px;}
+.ya{margin-left:64px;background-position:-64px 0px;}
+.ma{margin-left:96px;background-position:-96px 0px;}
+.vk{margin-left:128px;background-position:-128px 0px;}
+.od{margin-left:160px;background-position:-160px 0px;}
+.fb{margin-left:192px;background-position:-192px 0px;}
+.tw{margin-left:224px;background-position:-224px 0px;}
+
+.b1{font-weight:700; font-size:18px; color:#ffffff}
+
+{color:#660000;}
+
+
+.slpr:hover,.kick:hover, .icons:hover, .stars:hover, .pict:hover{opacity: 1;cursor:pointer;}
+.slpr,.kick, .icons, .stars, .pict{opacity: 0.8;background: url(/i/icons.png) no-repeat;overflow: hidden;}
+.kick{position: absolute;width: 14px;height: 14px;margin-top: 4px;background-position:-75px 0px;}
+.menu_table{border-collapse:collapse;table-layout:fixed;border:#000 1px solid;}
+.mt2{overflow:hidden;border-collapse:collapse;table-layout:fixed;}
+.butback{color:#666;}
+.butback:hover{text-decoration:underline;cursor:pointer;}
+.dlh1{ font-size:20px;margin:0px;}
+.dlh2{ font-size:19px;color:#333;}
+.dlh3{ font-size:16px;}
+.highlight{color:#090;}
+.cont{border: 1px solid #FFF; margin-left:200px;margin-top:100px; background-color:#FFF; padding:10px 40px 10px 10px;}
+.mtable{overflow:hidden;border-collapse:collapse;table-layout: fixed; width: 100%;}
+.mtable2{border:1px solid #339900;margin:10px;padding:5px;width:100%;}
+
+.menu{position:absolute;left:15px;top:100px;}
+.top{position:absolute;left:15px;top:2px;}
+.i1{float:left;margin-right:10px;}
+.i2{float:right;margin:10px;}
+.te{font-size:12px;color:#333;}
+.dt{font-size:11px;}
+.sn{font-size:14px;color:#06C;}
+.wn{font-size:14px;color:#333;padding-left:10px;margin-top:7px;}
+.repabuse{margin-left:20px;font-size:12px;color:#333;}
+.repabuse:hover{text-decoration:underline;cursor:pointer;}
+.dnl{font-size:15px;padding-left:10px;margin-top:7px;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.author{color:#069;}
+.prodesc{font-size:15px;margin-top:7px; padding-left:10px; text-align:justify;}
+.tabset{ font-size:14px; margin:10px 0px 0px 15px;}
+.tabset tr{height:24px; vertical-align:top;}
+.prodlist{border:1px solid #00C; margin:10px;padding:5px;width:100%;}
+.prodlist td{padding-bottom:15px;padding-top:2px;}
+.td_b{border-bottom:1px solid #000;}
+.h1m{ font-size:22px;margin:-11px -42px 10px -11px; padding:10px;}
+.dlh2{ font-size:19px;color:#333;}
+.dlh3{ font-size:16px;}
+.pubtable{font-size:14px;}
+.imgbig{position:absolute; z-index:2;}
+.catlink{color:#FFF;}
+.catlink2{color:#009;}
+.catlink2:visited{color:#009;}
+.but{width:160px;padding:5px;margin:0px 0px 5px -5px; text-align:center;}
+
+.but1{width:550px;padding:5px;margin:0px 0px 5px -5px; text-align:center;}
+
+.butq{width:155px;padding:5px;margin:0px 0px 5px -5px; text-align:center; color:#666;}
+.but3{width:160px;padding:5px;margin:0px 0px 5px -5px; text-align:center;}
+.but4{width:60px;padding:5px;margin:0px 0px 5px -5px; text-align:center;}
+.but5{width:30px;padding:5px;margin:0px 0px 5px -5px;position:absolute;}
+.but2{padding:5px 15px 5px 15px;color:#FFF;}
+.rates{ padding:0px 5px 0px 5px; display:inline-block;}
+.fs20{font-size:20px;}
+.fs18{font-size:18px;}
+.stardis{opacity:0.2;}
+.fheart{ font-size:12px;}
+.frate{ font-size:12px;}
+.textbar{border:1px solid #03C; width:300px;}
+.commstable{border-collapse:collapse;margin-left:30px;}
+.commstable tr{border-bottom:1px solid #999;}
+.ringlist tr{height:60px;}
+.linkc:hover{cursor:pointer;}
