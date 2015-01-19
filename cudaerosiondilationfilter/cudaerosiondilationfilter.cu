@@ -86,29 +86,17 @@ typedef struct {
 } bmp_dib_v3_header_t;
 
 
-__global__ void global_nonefilter(
-	unsigned int *input,
-	unsigned int *output,
-	int width, 
-	int height)
-{
-	for (int id = blockDim.x*blockIdx.x + threadIdx.x;
-		id < width*height;
-		id += blockDim.x*gridDim.x) {
-			output[id] = input[id];
-	}
-}
-
 __global__ void global_set2grayscale(
 	float *grayscale,
-	float value,
+	unsigned int *input,
+	float weight,
 	int width, 
 	int height)
 {
 	for (int id = blockDim.x*blockIdx.x + threadIdx.x;
 		id < width*height;
 		id += blockDim.x*gridDim.x) {
-			grayscale[id] = value;
+			grayscale[id] += weight*(float)(input[id]&0xFF);
 	}
 }
 
@@ -231,8 +219,9 @@ __host__ void host_erosiondilationfilter(
 	int threads = (blockSize > 0)? blockSize : min(15, (int)sqrt(width*height));
 
 	// Шаг 1. Рассчитываем монохромное изображение
-	global_set2grayscale <<< blocks, threads >>>(device_grayscale, 0.0f, width, height);
-	for(int j=0;j<3;j++){
+	cudaMemcpy(device_input, channel[0], width*height*sizeof(unsigned int), cudaMemcpyHostToDevice);
+	global_set2grayscale <<< blocks, threads >>>(device_grayscale, device_input, weight[0], width, height);
+	for(int j=1;j<3;j++){
 		cudaMemcpy(device_input, channel[j], width*height*sizeof(unsigned int), cudaMemcpyHostToDevice);
 		global_add2grayscale <<< blocks, threads >>>(device_grayscale, device_input, weight[j], width, height);
 	}

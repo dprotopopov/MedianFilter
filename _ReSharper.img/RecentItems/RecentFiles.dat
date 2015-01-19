@@ -19,17 +19,13 @@
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:Settings.cs" caret="850" fromTop="35" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:CudaRecursiveGaussFilter.cs" caret="976" fromTop="0" />
     <File id="3ACC3437-2776-4044-AF79-81398FE41F65/f:cudaboxfilter.cu" caret="8439" fromTop="20" />
-    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="10901" fromTop="12" />
     <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="7897" fromTop="11" />
     <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="13873" fromTop="21" />
     <File id="456F03CD-5526-43F3-AB37-45F515D102C8/f:MainForm.cs" caret="14734" fromTop="0" />
-    <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="6749" fromTop="7" />
+    <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="6749" fromTop="52" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="3006" fromTop="0" />
   </RecentFiles>
   <RecentEdits>
-    <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="7061" fromTop="14" />
-    <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="5737" fromTop="9" />
-    <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="3813" fromTop="27" />
-    <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="3770" fromTop="16" />
     <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="3770" fromTop="8" />
     <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="2878" fromTop="6" />
     <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="3811" fromTop="30" />
@@ -48,13 +44,17 @@
     <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="13623" fromTop="11" />
     <File id="DA82D8E1-AD54-4447-A6DE-318678E78A03/f:cudagaussfilter.cu" caret="13871" fromTop="11" />
     <File id="3ACC3437-2776-4044-AF79-81398FE41F65/f:cudaboxfilter.cu" caret="8439" fromTop="20" />
-    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="11159" fromTop="18" />
-    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="11159" fromTop="12" />
-    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="10901" fromTop="12" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="11068" fromTop="18" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="11068" fromTop="12" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="10810" fromTop="12" />
     <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="8066" fromTop="13" />
     <File id="C527E072-D397-40AE-A6BF-E740339CC230/f:cudamedianfilter.cu" caret="8113" fromTop="17" />
     <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="6842" fromTop="6" />
     <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="6959" fromTop="10" />
     <File id="A35A8C1D-A56D-4121-8A56-8ADD13BAE7AE/f:cudanonefilter.cu" caret="6749" fromTop="7" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="2877" fromTop="3" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="2977" fromTop="5" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="3167" fromTop="11" />
+    <File id="0B13B0FE-DA75-4FB8-A0F6-E58C81292722/f:cudaerosiondilationfilter.cu" caret="6578" fromTop="9" />
   </RecentEdits>
 </RecentFiles>

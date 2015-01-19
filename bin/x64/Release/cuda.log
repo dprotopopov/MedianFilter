@@ -1342,3 +1342,35 @@ BMP bytes per pixel :	4
 BMP bytes per line :	1600
 Execution time :	1.030000e-001
 Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	erosion
+Radius2 :	0
+Input file name :	R:\Temp\c28e5f08-63cf-4926-ba6b-f0162c871a91.bmp
+Output file name :	R:\Temp\791d7ef7-bd55-4c1e-b3dd-c72d52ca5b24.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	1.020000e-001
+Output file size :	427254
+Erosion and Dilation filter
+Running on GPU 0 (GeForce GTX 650)
+Title :	Erosion and Dilation filter
+Description :	Erosion and Dilation filter
+Filter :	dilation
+Radius2 :	0
+Input file name :	R:\Temp\ea0cdefd-8561-4597-a202-77a29a10dad7.bmp
+Output file name :	R:\Temp\70639421-3476-426b-9019-a3a9db8f23fa.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+Execution time :	7.200000e-002
+Output file size :	427254
