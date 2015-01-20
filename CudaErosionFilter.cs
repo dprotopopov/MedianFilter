@@ -45,8 +45,7 @@ namespace img
                 string inputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bmp";
                 string outputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bmp";
                 string command = string.Format("/C cudaerosiondilationfilter {0} {1} {2} {3} {4} {5} >> cuda.log",
-                    "erosion",
-                    Radius2,
+                    "erosion", Radius2,
                     inputFileName, outputFileName,
                     GridSize, BlockSize);
                 Oldbmp.Save(inputFileName, ImageFormat.Bmp);

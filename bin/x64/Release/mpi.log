@@ -7,3 +7,132 @@ Aborting: unable to connect to OVERNIGHT
 Размеры :	400 267
 Имя входного файла :	X:\Temp\98805896-a68b-4079-9eae-a52884516d79.bin
 Имя выходного файла :	X:\Temp\9c87d956-2480-4645-bf4d-8cc882b94640.bin
+
+job aborted:
+rank: node: exit code[: error message]
+0: OVERNIGHT: -1073741676: process 0 exited without calling finalize
+1: OVERNIGHT: -1073741676: process 1 exited without calling finalize
+2: OVERNIGHT: -1073741676: process 2 exited without calling finalize
+3: OVERNIGHT: -1073741676: process 3 exited without calling finalize
+4: OVERNIGHT: -1073741676: process 4 exited without calling finalize
+5: OVERNIGHT: -1073741676: process 5 exited without calling finalize
+6: OVERNIGHT: -1073741676: process 6 exited without calling finalize
+7: OVERNIGHT: -1073741676: process 7 exited without calling finalize
+8: OVERNIGHT: -1073741676: process 8 exited without calling finalize
+9: OVERNIGHT: -1073741676: process 9 exited without calling finalize
+
+job aborted:
+rank: node: exit code[: error message]
+0: OVERNIGHT: -1073741676: process 0 exited without calling finalize
+1: OVERNIGHT: -1073741676: process 1 exited without calling finalize
+2: OVERNIGHT: -1073741676: process 2 exited without calling finalize
+3: OVERNIGHT: -1073741676: process 3 exited without calling finalize
+4: OVERNIGHT: -1073741676: process 4 exited without calling finalize
+5: OVERNIGHT: -1073741676: process 5 exited without calling finalize
+6: OVERNIGHT: -1073741676: process 6 exited without calling finalize
+7: OVERNIGHT: -1073741676: process 7 exited without calling finalize
+8: OVERNIGHT: -1073741676: process 8 exited without calling finalize
+9: OVERNIGHT: -1073741676: process 9 exited without calling finalize
+Title :	Median Filter
+Description :	Median Filter
+Number of process :	10
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\299aa973-8a25-45a0-ba16-b63895d655bf.bmp
+Output file name :	R:\Temp\7e231b63-4084-4d43-b388-889fd60f79f6.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 0 read (0:0)-(281:27)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 8 read (239:212)-(121:241)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 4 read (319:105)-(201:134)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 2 read (159:52)-(41:81)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 3 read (39:79)-(321:107)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 1 read (279:25)-(161:54)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 9 read (119:239)-(0:267)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 6 read (79:159)-(361:187)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 7 read (359:185)-(241:214)
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600
+process 5 read (199:132)-(81:161)
+
+job aborted:
+rank: node: exit code[: error message]
+0: OVERNIGHT: 123
+1: OVERNIGHT: -1073741819: process 1 exited without calling finalize
+2: OVERNIGHT: -1073741819: process 2 exited without calling finalize
+3: OVERNIGHT: -1073741819: process 3 exited without calling finalize
+4: OVERNIGHT: -1073741819: process 4 exited without calling finalize
+5: OVERNIGHT: -1073741819: process 5 exited without calling finalize
+6: OVERNIGHT: -1073741819: process 6 exited without calling finalize
+7: OVERNIGHT: -1073741819: process 7 exited without calling finalize
+8: OVERNIGHT: -1073741819: process 8 exited without calling finalize
+9: OVERNIGHT: -1073741819: process 9 exited without calling finalize
+Title :	Median Filter
+Description :	Median Filter
+Number of process :	10
+Filter :	median
+Step :	3
+Input file name :	R:\Temp\2b5325a9-191a-4bc1-a99c-07c274e4c621.bmp
+Output file name :	R:\Temp\6fed354f-bc14-4876-b7cb-964419629511.bmp
+BMP image size :	400 x 267
+BMP file size :	427254
+BMP pixels offset :	54
+BMP bits per pixel :	32
+BMP bytes per pixel :	4
+BMP bytes per line :	1600

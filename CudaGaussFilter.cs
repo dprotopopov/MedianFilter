@@ -45,8 +45,7 @@ namespace img
                 string inputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 string outputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 string command = string.Format("/C cudagaussfilter {0} {1} {2} {3} {4} {5} >> cuda.log",
-                    "gauss",
-                    Sigma,
+                    "gauss", Sigma,
                     inputFileName, outputFileName,
                     GridSize, BlockSize);
 

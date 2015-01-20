@@ -45,8 +45,7 @@ namespace img
                 string inputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bmp";
                 string outputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bmp";
                 string command = string.Format("/C cudamedianfilter {0} {1} {2} {3} {4} {5} >> cuda.log",
-                    "median",
-                    Step,
+                    "median", Step,
                     inputFileName, outputFileName,
                     GridSize, BlockSize);
 

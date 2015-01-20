@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 
@@ -8,34 +9,20 @@ namespace img
 {
     internal class CudaBoxFilter : IFilter
     {
-        private readonly int[][] _matrix;
+        private static readonly int[][] Matrix =
+        {
+            new[] {0, 1, 0},
+            new[] {1, 0, 1},
+            new[] {0, 1, 0}
+        };
+
         public Bitmap Newbmp;
         public Bitmap Oldbmp;
-        private byte[][][] _channel;
-        private int _height;
-        private int _width;
 
         public CudaBoxFilter(Bitmap btm, int gridSize, int blockSize)
         {
-            if (Newbmp != null)
-                Newbmp.Dispose();
-            if (Oldbmp != null)
-                Oldbmp.Dispose();
             Oldbmp = new Bitmap(btm);
             Newbmp = new Bitmap(btm);
-            _width = btm.Width;
-            _height = btm.Height;
-            _matrix = new[]
-            {
-                new[] {0, 1, 0},
-                new[] {1, 0, 1},
-                new[] {0, 1, 0}
-            };
-            _channel = new[]
-            {
-                new[] {new byte[_width*_height], new byte[_width*_height], new byte[_width*_height]},
-                new[] {new byte[_width*_height], new byte[_width*_height], new byte[_width*_height]}
-            };
             GridSize = gridSize;
             BlockSize = blockSize;
         }
@@ -57,13 +44,6 @@ namespace img
                     Newbmp.Dispose();
                 Newbmp = new Bitmap(value);
                 Oldbmp = new Bitmap(value);
-                _width = value.Width;
-                _height = value.Height;
-                _channel = new[]
-                {
-                    new[] {new byte[_width*_height], new byte[_width*_height], new byte[_width*_height]},
-                    new[] {new byte[_width*_height], new byte[_width*_height], new byte[_width*_height]}
-                };
             }
         }
 
@@ -73,35 +53,13 @@ namespace img
             {
                 string inputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
                 string outputFileName = Path.GetTempPath() + Guid.NewGuid() + ".bin";
-                var buffer = new byte[3*1024];
-                string command = string.Format("/C cudaboxfilter {0} {1} {2} {3} {4} {5} {6} {7} >> cuda.log",
-                    "box",
-                    string.Join(" ",
-                        _matrix.Select(row => string.Join(" ", row.Select(item => string.Format("{0}", item))))),
-                    _width, _height,
+                string command = string.Format("/C cudaboxfilter {0} {1} {2} {3} {4} {5} >> cuda.log",
+                    "box", string.Join(" ",
+                        Matrix.Select(row => string.Join(" ", row.Select(item => string.Format("{0}", item))))),
                     inputFileName, outputFileName,
                     GridSize, BlockSize);
 
-                for (int y = 0; y < _height; y++)
-                    for (int x = 0; x < _width; x++)
-                    {
-                        Color c = Oldbmp.GetPixel(x, y);
-                        _channel[0][0][y*_width + x] = c.R;
-                        _channel[0][1][y*_width + x] = c.G;
-                        _channel[0][2][y*_width + x] = c.B;
-                    }
-                using (var writer = new BinaryWriter(File.Open(inputFileName, FileMode.Create)))
-                {
-                    for (int i = 0; i < _width*_height; i += buffer.Length/3)
-                    {
-                        int count = Math.Min(buffer.Length/3, _width*_height - i);
-                        for (int k = 0; k < count; k++)
-                            for (int j = 0; j < 3; j++)
-                                buffer[3*k + j] = _channel[0][j][i + k];
-                        writer.Write(buffer, 0, 3*count);
-                    }
-                    writer.Close();
-                }
+                Oldbmp.Save(inputFileName, ImageFormat.Bmp);
 
                 Debug.WriteLine(command);
                 Process process = Process.Start("cmd", command);
@@ -112,25 +70,7 @@ namespace img
 
                     if (process.ExitCode == 0)
                     {
-                        using (var reader = new BinaryReader(File.Open(outputFileName, FileMode.Open)))
-                        {
-                            for (int i = 0; i < _width*_height; i += buffer.Length/3)
-                            {
-                                int count = Math.Min(buffer.Length/3, _width*_height - i);
-                                reader.Read(buffer, 0, 3*count);
-                                for (int k = 0; k < count; k++)
-                                    for (int j = 0; j < 3; j++)
-                                        _channel[1][j][i + k] = buffer[3*k + j];
-                            }
-                            reader.Close();
-                        }
-                        for (int y = 0; y < _height; y++)
-                            for (int x = 0; x < _width; x++)
-                            {
-                                Newbmp.SetPixel(x, y,
-                                    Color.FromArgb(_channel[1][0][y*_width + x], _channel[1][1][y*_width + x],
-                                        _channel[1][2][y*_width + x]));
-                            }
+                        Newbmp = new Bitmap(Image.FromFile(outputFileName));
                     }
                     else throw new Exception();
                 }
