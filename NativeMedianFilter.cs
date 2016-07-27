@@ -26,8 +26,6 @@ namespace img
         public NativeMedianFilter(Bitmap btm, Int32 step = 3)
             : this()
         {
-            if (Newbmp != null)
-                Newbmp.Dispose();
             Oldbmp = new Bitmap(btm);
             Newbmp = new Bitmap(btm);
             _width = btm.Width;
@@ -101,8 +99,6 @@ namespace img
         {
             set
             {
-                if (Newbmp != null)
-                    Newbmp.Dispose();
                 Newbmp = new Bitmap(value);
                 Oldbmp = new Bitmap(value);
                 _width = value.Width;

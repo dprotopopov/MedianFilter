@@ -10,6 +10,7 @@ Box-фильтр представляет собой так называемую
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <assert.h>
 #include <time.h>
 #include <cuda.h>
 #include <cuda_runtime.h>
@@ -21,8 +22,6 @@ Box-фильтр представляет собой так называемую
 #ifndef min
 #define min( a, b ) ( ((a) < (b)) ? (a) : (b) )
 #endif
-
-#define assert( bool ) 
 
 #ifndef uint8_t
 typedef unsigned char uint8_t;

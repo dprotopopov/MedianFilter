@@ -1,17 +1,11 @@
-﻿Построение начато 20.01.2015 5:37:27.
+﻿Сборка начата 27.07.2016 21:13:20.
      1>Проект "D:\Projects\MedianFilter\mpimedianfilter\MpiMedianFilter.vcxproj" в узле 2 (целевые объекты Rebuild).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\MPICH2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc110.pdb" /Gd /TP /errorReport:prompt mpimedianfilter.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\MPICH2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt mpimedianfilter.cpp
          mpimedianfilter.cpp
-     1>mpimedianfilter.cpp(311): warning C4244: инициализация: преобразование "MPI_Offset" в "int", возможна потеря данных
-     1>mpimedianfilter.cpp(324): warning C4244: инициализация: преобразование "MPI_Offset" в "int", возможна потеря данных
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\MedianFilter\bin\x64\Release\mpimedianfilter.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\MPICH2\lib" mpi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\MedianFilter\bin\x64\Release\mpimedianfilter.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\MedianFilter\bin\x64\Release\mpimedianfilter.lib" /MACHINE:X64 x64\Release\mpimedianfilter.obj
-         Создание кода
-         Создание кода завершено
-         MpiMedianFilter.vcxproj -> D:\Projects\MedianFilter\bin\x64\Release\mpimedianfilter.exe
-     1>Построение проекта "D:\Projects\MedianFilter\mpimedianfilter\MpiMedianFilter.vcxproj" завершено (целевые объекты Rebuild).
+     1>mpimedianfilter.cpp(11): fatal error C1083: Не удается открыть файл включение: mpi.h: No such file or directory
+     1>Сборка проекта "D:\Projects\MedianFilter\mpimedianfilter\MpiMedianFilter.vcxproj" завершена (целевые объекты Rebuild) с ошибкой.
 
-Построение успешно завершено.
+Ошибка сборки.
 
-Затраченное время: 00:00:00.75
+Затраченное время: 00:00:00.41

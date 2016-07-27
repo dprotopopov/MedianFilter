@@ -2,10 +2,16 @@ D:\Projects\MedianFilter\bin\x64\Release\img.exe.config
 D:\Projects\MedianFilter\bin\x64\Release\img.exe
 D:\Projects\MedianFilter\bin\x64\Release\img.pdb
 D:\Projects\MedianFilter\bin\x64\Release\Cudafy.NET.dll
+D:\Projects\MedianFilter\bin\x64\Release\MiniMax.dll
 D:\Projects\MedianFilter\bin\x64\Release\MyCudafy.dll
+D:\Projects\MedianFilter\bin\x64\Release\MyFormula.dll
 D:\Projects\MedianFilter\bin\x64\Release\MyLibrary.dll
+D:\Projects\MedianFilter\bin\x64\Release\MyMath.dll
+D:\Projects\MedianFilter\bin\x64\Release\MiniMax.pdb
+D:\Projects\MedianFilter\bin\x64\Release\MyFormula.pdb
 D:\Projects\MedianFilter\bin\x64\Release\MyCudafy.pdb
 D:\Projects\MedianFilter\bin\x64\Release\MyLibrary.pdb
+D:\Projects\MedianFilter\bin\x64\Release\MyMath.pdb
 D:\Projects\MedianFilter\bin\x64\Release\Cudafy.NET.xml
 D:\Projects\MedianFilter\obj\x64\Release\img.csprojResolveAssemblyReference.cache
 D:\Projects\MedianFilter\obj\x64\Release\img.About.resources
@@ -18,9 +24,3 @@ D:\Projects\MedianFilter\obj\x64\Release\img.Settings.resources
 D:\Projects\MedianFilter\obj\x64\Release\img.csproj.GenerateResource.Cache
 D:\Projects\MedianFilter\obj\x64\Release\img.exe
 D:\Projects\MedianFilter\obj\x64\Release\img.pdb
-D:\Projects\MedianFilter\bin\x64\Release\MiniMax.dll
-D:\Projects\MedianFilter\bin\x64\Release\MyFormula.dll
-D:\Projects\MedianFilter\bin\x64\Release\MyMath.dll
-D:\Projects\MedianFilter\bin\x64\Release\MiniMax.pdb
-D:\Projects\MedianFilter\bin\x64\Release\MyFormula.pdb
-D:\Projects\MedianFilter\bin\x64\Release\MyMath.pdb

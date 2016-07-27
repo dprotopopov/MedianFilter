@@ -4,6 +4,7 @@ char *description = "gauss filtering";
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <assert.h>
 #include <time.h>
 #include <cuda.h>
 #include <cuda_runtime.h>
@@ -16,8 +17,6 @@ char *description = "gauss filtering";
 #ifndef min
 #define min( a, b ) ( ((a) < (b)) ? (a) : (b) )
 #endif
-
-#define assert( bool ) 
 
 #ifndef uint8_t
 typedef unsigned char uint8_t;
